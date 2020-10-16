@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function () {
+    Route::group(['prefix' => 'theloai'], function () {
+        Route::get('danhsach', 'TheLoaiController@getDanhSach');
+        Route::get('sua/{id}', 'TheLoaiController@getSua');
+        Route::post('sua/{id}', 'TheLoaiController@postSua');
+        Route::get('xoa/{id}', 'TheLoaiController@getXoa');
+        Route::get('them', 'TheLoaiController@getThem');
+        Route::post('them', 'TheLoaiController@postThem');
+    });
+});
