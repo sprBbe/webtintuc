@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Khóa Học Lập Trình Laravel Framework 5.x Tại Khoa Phạm">
-    <meta name="author" content="">
-    <title>Bbe's First Laravel Project!</title>
-
-    <base href="{{asset('')}}">
-
-=======
 
     <base href="{{asset('')}}">
     <meta charset="utf-8">
@@ -25,7 +14,6 @@
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet"> --}}
 
->>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -43,10 +31,6 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="admin_asset/bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
-<<<<<<< HEAD
-    <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
-=======
->>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
 </head>
 
 <body>
