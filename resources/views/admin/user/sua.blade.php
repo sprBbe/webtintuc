@@ -16,16 +16,17 @@
                      <div class="alert alert-danger">
                         @foreach ($errors->all() as $err)
                             {{$err}}<br>
-                        @endforeach       
+                        @endforeach
                      </div>
                 @endif
                 @if (session('thongbao'))
                      <div class="alert alert-success">
-                        {{session('thongbao')}} 
+                        {{session('thongbao')}}
                      </div>
                 @endif
                 <form action="admin/user/sua/{{$user->id}}" method="POST">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                    @method('PATCH')
+                    @csrf
                     <div class="form-group">
                         <label>Tên Người Dùng</label>
                         <input class="form-control" name="Ten" placeholder="Nhập tên người dùng" value="{{$user->name}}"/>
@@ -46,7 +47,7 @@
                     <div class="form-group">
                         <label>Quyền</label>
                         <label class="radio-inline">
-                            <input name="Quyen" 
+                            <input name="Quyen"
                             @if (0 == $user->quyen)
                                     {{"checked"}}
                             @endif
@@ -69,7 +70,7 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-    
+
 @endsection
 @section('script')
     <script>
@@ -80,7 +81,7 @@
                     //alert("checked");
                 }else{
                     $(".password").attr('disabled','');
-                    //alert("notchecked"); 
+                    //alert("notchecked");
                 }
             });
        });
