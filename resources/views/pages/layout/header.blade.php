@@ -60,24 +60,66 @@
                                 Xã hội
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">Giáo Dục</a>
+                                <a class="dropdown-item" href="#">Nhịp Điệu Trẻ</a>
+                                <a class="dropdown-item" href="#">Du Lịch</a>
+                                <a class="dropdown-item" href="#">Du Học</a>
+                                <a class="dropdown-item" href="#">Sennehi 12</a>
                                 </div>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Thế giới</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Thế giới
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Cuộc Sống đó đây</a>
+                                <a class="dropdown-item" href="#">Ảnh</a>
+                                <a class="dropdown-item" href="#">Người Việt 5 Châu</a>
+                                <a class="dropdown-item" href="#">Phân Tích</a>
+                                </div>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Thể thao</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Thể thao
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Bóng Đá</a>
+                                <a class="dropdown-item" href="#">Tennis</a>
+                                <a class="dropdown-item" href="#">Chân Dung</a>
+                                <a class="dropdown-item" href="#">Ảnh</a>
+                                </div>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Kinh doanh</a>
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kinh doanh
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Chứng Khoán</a>
+                                <a class="dropdown-item" href="#">Bất Động Sản</a>
+                                <a class="dropdown-item" href="#">Doanh Nhân</a>
+                                <a class="dropdown-item" href="#">Quốc Tế</a>
+                                <a class="dropdown-item" href="#">Mua Sắm</a>
+                                <a class="dropdown-item" href="#">Doanh Nghiệp Viết</a>
+                                </div>
                           </li>
-                          <li><a href="categories.html" class="nav-link text-left">Văn Hóa</a></li>
+                          <li><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Văn hóa
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Hoa Hậu</a>
+                                <a class="dropdown-item" href="#">Nghệ Sĩ</a>
+                                <a class="dropdown-item" href="#">Âm Nhạc</a>
+                                <a class="dropdown-item" href="#">Thời Trang</a>
+                                <a class="dropdown-item" href="#">Điện Ảnh</a>
+                                <a class="dropdown-item" href="#">Mỹ Thuật</a>
+                                </div></li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Pháp luật</a>
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Pháp luật
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Hình Sự</a>
+                                </div>
                           </li>
                       </ul>
                   </nav>
