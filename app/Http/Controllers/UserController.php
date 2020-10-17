@@ -69,7 +69,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->Password);
         $user->quyen = $request->Quyen;
         $user->save();
-        return redirect('admin/user/edit')->with('thongbao', 'Thêm thành công!');
+        return redirect('admin/user/create')->with('thongbao', 'Thêm thành công!');
     }
 
     /**

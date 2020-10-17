@@ -35,14 +35,14 @@
                             @endif
                         </td>
                          <td class="center">
-                            <form action="admin/user/{{$sd->id}}" method="POST">
+                            <form action="admin/user/{{$u->id}}" method="POST">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
                             </form>
                         </td>
                         <td class="center">
-                            <form action="admin/user/{{$sd->id}}/edit">
+                            <form action="admin/user/{{$u->id}}/edit">
                                 <button type="submit" style="display: inline;" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-pencil"></i></button>
                             </form>
                         </td>

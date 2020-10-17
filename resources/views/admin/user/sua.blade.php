@@ -24,7 +24,7 @@
                         {{session('thongbao')}}
                      </div>
                 @endif
-                <form action="admin/user/sua/{{$user->id}}" method="POST">
+                <form action="admin/user/{{$user->id}}" method="POST">
                     @method('PATCH')
                     @csrf
                     <div class="form-group">
