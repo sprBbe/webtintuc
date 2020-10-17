@@ -28,7 +28,5 @@ Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function
     Route::group(['prefix' => 'comment'], function () {
         Route::get('xoa/{id}/{idTinTuc}', 'CommentController@getXoa');
     });
+    Route::resource('user', 'UserController')->except(['show']);
 });
-
-
-
