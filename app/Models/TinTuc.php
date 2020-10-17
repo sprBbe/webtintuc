@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TinTuc extends Model
 {
     use HasFactory;
-    protected $table = "tintuc";
+    protected $table = "TinTuc";
     public function loaitin(){
         return $this->belongsTo('App\LoaiTin','idLoaiTin','id');
     }

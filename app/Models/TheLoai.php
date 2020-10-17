@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TheLoai extends Model
 {
     use HasFactory;
-    protected $table = "theloai";
+    protected $table = "TheLoai";
     public function loaitin(){
         return $this->hasMany('App\LoaiTin','idTheLoai','id');
     }
