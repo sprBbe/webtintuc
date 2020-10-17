@@ -10,9 +10,9 @@ class Comment extends Model
     use HasFactory;
     protected $table = "Comment";
     public function tintuc(){
-        return $this->belongsTo('App\TinTuc','idTinTuc','id');
+        return $this->belongsTo('App\Models\TinTuc','idTinTuc','id');
     }
     public function user(){
-        return $this->belongsTo('App\User','idUser','id');
+        return $this->belongsTo('App\Models\User','idUser','id');
     }
 }

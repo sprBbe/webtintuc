@@ -10,9 +10,9 @@ class TinTuc extends Model
     use HasFactory;
     protected $table = "TinTuc";
     public function loaitin(){
-        return $this->belongsTo('App\LoaiTin','idLoaiTin','id');
+        return $this->belongsTo('App\Models\LoaiTin','idLoaiTin','id');
     }
     public function comment(){
-        return $this->hasMany('App\Comment','idTinTuc','id');
+        return $this->hasMany('App\Models\Comment','idTinTuc','id');
     }
 }
