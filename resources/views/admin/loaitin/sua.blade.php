@@ -24,8 +24,9 @@
                         {{session('thongbao')}} 
                      </div>
                 @endif
-                <form action="admin/loaitin/sua/{{$loaitin->id}}" method="POST">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                <form action="admin/loaitin/{{$loaitin->id}}" method="POST">
+                    @method('PATCH')
+                    @csrf
                     <div class="form-group">
                         <label>Thể Loại</label>
                         <select class="form-control" name="TheLoai">

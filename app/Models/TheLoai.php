@@ -10,9 +10,9 @@ class TheLoai extends Model
     use HasFactory;
     protected $table = "TheLoai";
     public function loaitin(){
-        return $this->hasMany('App\LoaiTin','idTheLoai','id');
+        return $this->hasMany('App\Models\LoaiTin','idTheLoai','id');
     }
     public function tintuc(){
-        return $this->hasManyThrough('App\TinTuc','App\LoaiTin','idTheLoai','idLoaiTin','id');
+        return $this->hasManyThrough('App\Models\TinTuc','App\Models\LoaiTin','idTheLoai','idLoaiTin','id');
     }
 }
