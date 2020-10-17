@@ -16,16 +16,16 @@
                      <div class="alert alert-danger">
                         @foreach ($errors->all() as $err)
                             {{$err}}<br>
-                        @endforeach       
+                        @endforeach
                      </div>
                 @endif
                 @if (session('thongbao'))
                      <div class="alert alert-success">
-                        {{session('thongbao')}} 
+                        {{session('thongbao')}}
                      </div>
                 @endif
-                <form action="admin/slide/them" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                <form action="admin/slide" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label>Tên</label>
                         <input class="form-control" name="Ten" placeholder="Nhập tên cho Slide" />
@@ -51,5 +51,5 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-    
+
 @endsection

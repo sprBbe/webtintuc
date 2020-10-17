@@ -55,10 +55,10 @@
                 <a href="#"><i class="fa fa-desktop fa-fw"></i> Slide<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="admin/slide/danhsach">Danh Sách Slide</a>
+                        <a href="admin/slide">Danh Sách Slide</a>
                     </li>
                     <li>
-                        <a href="admin/slide/them">Thêm Slide</a>
+                        <a href="admin/slide/create">Thêm Slide</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

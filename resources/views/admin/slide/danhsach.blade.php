@@ -14,7 +14,7 @@
             <div class="col-lg-12">
                 @if (session('thongbao'))
                     <div class="alert alert-success">
-                    {{session('thongbao')}} 
+                    {{session('thongbao')}}
                     </div>
                 @endif
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -39,17 +39,27 @@
                                 <img src="upload/slide/{{$sd->Hinh}}" width='200px'>
                             </td>
                             <td>{{$sd->link}}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/slide/xoa/{{$sd->id}}">Xoá</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/slide/sua/{{$sd->id}}">Sửa</a></td>
-                        </tr> 
+                            <td class="center">
+                                <form action="admin/slide/{{$sd->id}}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                                </form>
+                            </td>
+                            <td class="center">
+                                <form action="admin/slide/{{$sd->id}}/edit">
+                                    <button type="submit" style="display: inline;" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-pencil"></i></button>
+                                </form>
+                            </td>
+                        </tr>
                         @endforeach
                     </tbody>
                 </table>
-            </div>   
+            </div>
         </div>
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
 </div>
-    
+
 @endsection
