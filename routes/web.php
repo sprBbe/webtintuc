@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('trangchu');
 });
 
 Route::get('admin/login', [UserController::class,'getdangnhapAdmin']);
@@ -35,3 +36,5 @@ Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers', 'middlewa
     });
     Route::resource('user', 'UserController')->except(['show']);
 });
+
+Route::get('trangchu', [PagesController::class,'trangchu']);
