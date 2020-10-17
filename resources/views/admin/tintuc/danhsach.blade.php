@@ -50,8 +50,18 @@
                                     @else {{'Có'}}
                                     @endif
                                 </td>
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/tintuc/xoa/{{$tt->id}}">Xoá</a></td>
-                                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/tintuc/sua/{{$tt->id}}">Sửa</a></td>
+                                <td class="center">
+                                    <form action="admin/tintuc/{{$tt->id}}" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                                    </form>
+                                </td>
+                                <td class="center">
+                                    <form action="admin/tintuc/{{$tt->id}}/edit">
+                                        <button type="submit" style="display: inline;" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    </form>
+                                </td>
                             </tr>  
                         @endforeach
                         

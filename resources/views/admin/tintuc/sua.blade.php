@@ -24,8 +24,9 @@
                         {{session('thongbao')}} 
                      </div>
                 @endif
-                <form action="admin/tintuc/sua/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                <form action="admin/tintuc/{{$tintuc->id}}" method="POST" enctype="multipart/form-data">
+                    @method('PATCH')
+                    @csrf
                     <div class="form-group">
                         <label>Thể Loại</label>
                         <select id="TheLoai" class="form-control" name="TheLoai">
@@ -87,7 +88,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Sửa Tin Tức</button>
                     <button type="reset" class="btn btn-default">Làm lại</button>
-                <form>
+                </form>
             </div>
         </div>
         <!-- /.row -->
@@ -124,7 +125,13 @@
                             <td>{{$cm->user->name}}</td>
                             <td>{{$cm->NoiDung}}</td>
                             <td>{{$cm->created_at}}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/comment/xoa/{{$cm->id}}/{{$tintuc->id}}">Xoá</a></td>
+                            <td class="center">
+                                <form action="admin/comment/{{$cm->id}}" method="POST">
+                                    @method('delete')
+                                    @csrf
+                                    <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                                </form>
+                            </td>
                         </tr>  
                     @endforeach
                     

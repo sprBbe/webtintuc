@@ -40,7 +40,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Thêm Loại Tin</button>
                     <button type="reset" class="btn btn-default">Làm lại</button>
-                <form>
+                </form>
             </div>
         </div>
         <!-- /.row -->

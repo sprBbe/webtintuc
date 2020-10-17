@@ -21,6 +21,13 @@ Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function
     Route::resource('theloai', 'TheLoaiController')->except(['show']);
     Route::resource('slide', 'SlideController')->except(['show']);
     Route::resource('loaitin', 'LoaiTinController')->except(['show']);
+    Route::resource('tintuc', 'TinTucController')->except(['show']);
+    Route::group(['prefix' => 'ajax'], function () {
+        Route::get('loaitin/{idTheLoai}', 'AjaxController@getLoaiTin');
+    });
+    Route::group(['prefix' => 'comment'], function () {
+        Route::get('xoa/{id}/{idTinTuc}', 'CommentController@getXoa');
+    });
 });
 
 

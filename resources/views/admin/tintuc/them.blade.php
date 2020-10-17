@@ -24,8 +24,8 @@
                         {{session('thongbao')}} 
                      </div>
                 @endif
-                <form action="admin/tintuc/them" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                <form action="admin/tintuc" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label>Thể Loại</label>
                         <select id="TheLoai" class="form-control" name="TheLoai">
@@ -68,7 +68,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Thêm Tin Tức</button>
                     <button type="reset" class="btn btn-default">Làm lại</button>
-                <form>
+                </form>
             </div>
         </div>
         <!-- /.row -->
