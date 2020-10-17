@@ -13,7 +13,7 @@
       <div class="row align-items-center">
           <div class="col-12 col-lg-6 d-flex">
               <a href="index.html" class="site-logo">
-                  Meranda
+                  VINATIN
               </a>
 
               <a href="#"
@@ -53,25 +53,24 @@
                   <nav class="site-navigation position-relative text-right" role="navigation">
                       <ul class="site-menu main-menu js-clone-nav mr-auto d-none pl-0 d-lg-block">
                           <li class="active">
-                              <a href="index.html" class="nav-link text-left">Home</a>
+                              <a href="/trangchu" class="nav-link text-left">Home</a>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Categories</a>
+                              <a href="categories.html" class="nav-link text-left">Xã hội</a>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Politics</a>
+                              <a href="categories.html" class="nav-link text-left">Thế giới</a>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Business</a>
+                              <a href="categories.html" class="nav-link text-left">Thể thao</a>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Health</a>
+                              <a href="categories.html" class="nav-link text-left">Kinh doanh</a>
                           </li>
-                          <li><a href="categories.html" class="nav-link text-left">Design</a></li>
+                          <li><a href="categories.html" class="nav-link text-left">Văn Hóa</a></li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Sport</a>
+                              <a href="categories.html" class="nav-link text-left">Pháp luật</a>
                           </li>
-                          <li><a href="contact.html" class="nav-link text-left">Contact</a></li>
                       </ul>
                   </nav>
 
