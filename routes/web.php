@@ -19,10 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('admin/login', [UserController::class,'getdangnhapAdmin']);
-Route::post('admin/login', [UserController::class,'posdangnhapAdmin']);
+Route::post('admin/login', [UserController::class,'postdangnhapAdmin']);
 Route::get('admin/logout', [UserController::class,'getdangxuatAdmin']);
 
-Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function () {
+Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers', 'middleware'=>'adminLogin'], function () {
     Route::resource('theloai', 'TheLoaiController')->except(['show']);
     Route::resource('slide', 'SlideController')->except(['show']);
     Route::resource('loaitin', 'LoaiTinController')->except(['show']);
