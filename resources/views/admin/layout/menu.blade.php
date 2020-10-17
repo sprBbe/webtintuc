@@ -19,17 +19,10 @@
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Thể Loại<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-<<<<<<< HEAD
-                        <a href="admin/theloai/danhsach">Danh Sách Thể Loại</a>
-                    </li>
-                    <li>
-                        <a href="admin/theloai/them">Thêm Thể Loại</a>
-=======
                         <a href="admin/theloai">Danh Sách Thể Loại</a>
                     </li>
                     <li>
                         <a href="admin/theloai/create">Thêm Thể Loại</a>
->>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->

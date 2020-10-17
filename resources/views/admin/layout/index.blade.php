@@ -24,7 +24,7 @@
 
     <!-- Styles -->
     <link href="css/app.css" rel="stylesheet"> --}}
-    
+
 >>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -61,10 +61,6 @@
 
     </div>
     <!-- /#wrapper -->
-<<<<<<< HEAD
-
-=======
->>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
     <!-- jQuery -->
     <script src="admin_asset/bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -80,11 +76,7 @@
     <!-- DataTables JavaScript -->
     <script src="admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>
     <script src="admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
-<<<<<<< HEAD
-
-=======
     <script type="text/javascript" language="javascript" src="admin_asset/ckeditor/ckeditor.js" ></script>
->>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
