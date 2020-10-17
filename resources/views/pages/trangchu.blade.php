@@ -3,54 +3,26 @@
 
 <div class="site-section py-0">
     <div class="owl-carousel hero-slide owl-style">
+        @foreach ($bon_tinnoibat as $bon_tin)
+            <div class="site-section">
+                <div class="container">
+                    <div class="half-post-entry d-block d-lg-flex bg-light">
+                        <div class="img-bg" style="background-image: url('pages_asset/images/big_img_1.jpg')"></div>
+                        <div class="contents">
+                            <span class="caption">TIN TỨC NỔI BẬT</span>
+                            <h2><a href="blog-single.html">{{$bon_tin->TieuDe}}</a></h2>
+                            <p class="mb-3">{{$bon_tin->TomTat}}</p>
 
-        <div class="site-section">
-            <div class="container">
-                <div class="half-post-entry d-block d-lg-flex bg-light">
-                    <div class="img-bg" style="background-image: url('pages_asset/images/big_img_1.jpg')"></div>
-                    <div class="contents">
-                        <span class="caption">Editor's Pick</span>
-                        <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero
-                            obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim
-                            praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis,
-                            iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?</p>
+                            <div class="post-meta">
+                                <span class="d-block"><a href="#">{{$bon_tin->loaitin->Ten}}</a></span>
+                                <span class="date-read">{{$bon_tin->updated_at}}<span class="mx-1">&bullet;</span>{{$bon_tin->SoLuotXem}} lượt xem</span>
+                            </div>
 
-                        <div class="post-meta">
-                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
-                            <span class="date-read">Jun 14 <span class="mx-1">&bullet;</span> 3 min read <span
-                                    class="icon-star2"></span></span>
                         </div>
-
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="site-section">
-            <div class="container">
-                <div class="half-post-entry d-block d-lg-flex bg-light">
-                    <div class="img-bg" style="background-image: url('pages_asset/images/big_img_1.jpg')"></div>
-                    <div class="contents">
-                        <span class="caption">Editor's Pick</span>
-                        <h2><a href="blog-single.html">News Needs to Meet Its Audiences Where They Are</a></h2>
-                        <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate vero
-                            obcaecati natus adipisci necessitatibus eius, enim vel sit ad reiciendis. Enim
-                            praesentium magni delectus cum, tempore deserunt aliquid quaerat culpa nemo veritatis,
-                            iste adipisci excepturi consectetur doloribus aliquam accusantium beatae?</p>
-
-                        <div class="post-meta">
-                            <span class="d-block"><a href="#">Dave Rogers</a> in <a href="#">Food</a></span>
-                            <span class="date-read">Jun 14 <span class="mx-1">&bullet;</span> 3 min read <span
-                                    class="icon-star2"></span></span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+        @endforeach
     </div>
 </div>
 
