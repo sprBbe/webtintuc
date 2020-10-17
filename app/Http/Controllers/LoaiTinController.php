@@ -122,7 +122,7 @@ class LoaiTinController extends Controller
      */
     public function destroy($id)
     {
-        $loaitin = TheLoai::find($id);
+        $loaitin = LoaiTin::find($id);
         $loaitin->delete();
         return redirect('admin/loaitin')->with('thongbao', 'Xoá thành công!');
     }

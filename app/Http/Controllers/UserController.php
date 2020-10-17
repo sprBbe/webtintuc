@@ -154,7 +154,7 @@ class UserController extends Controller
         //
         $user = User::find($id);
         $user->delete();
-        return redirect('admin/user')->with('thongbao', 'Xoá thành công!');
+        return redirect('admin/user')->with('thongbao', 'Xoá người dùng thành công!');
     }
 
     public function getdangnhapAdmin()
