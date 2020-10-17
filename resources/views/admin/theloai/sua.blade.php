@@ -24,8 +24,9 @@
                         {{session('thongbao')}}
                      </div>
                 @endif
-                <form action="admin/theloai/sua/{{$theloai->id}}" method="POST">
-                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                <form action="admin/theloai/{{$theloai->id}}" method="POST">
+                    @method('PATCH') 
+                    @csrf
                     <div class="form-group">
                         <label>Tên Thể Loại</label>
                     <input class="form-control" name="Ten" placeholder="Điền tên Thể Loại" value="{{$theloai->Ten}}"/>

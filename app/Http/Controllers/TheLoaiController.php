@@ -2,21 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TheLoai;
 use Illuminate\Http\Request;
-use App\Models\{TheLoai, LoaiTin, Slide, Comment, User, TinTuc};
 
 class TheLoaiController extends Controller
 {
-    public function getDanhSach()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
         $theloai = TheLoai::all();
         return view('admin.theloai.danhsach', ['theloai' => $theloai]);
     }
-    public function getThem()
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         return view('admin.theloai.them');
     }
-    public function postThem(Request $request)
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
         $this->validate(
             $request,
@@ -34,14 +52,40 @@ class TheLoaiController extends Controller
         $theloai->Ten = $request->Ten;
         $theloai->TenKhongDau = changeTitle($request->Ten);
         $theloai->save();
-        return redirect('admin/theloai/them')->with('thongbao', 'Thêm thành công!');
+        return redirect('admin/theloai/create')->with('thongbao', 'Thêm thành công!');
     }
-    public function getSua($id)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\TheLoai  $theLoai
+     * @return \Illuminate\Http\Response
+     */
+    public function show(TheLoai $theLoai)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\TheLoai  $theLoai
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         $theloai = TheLoai::find($id);
         return view('admin.theloai.sua', ['theloai' => $theloai]);
     }
-    public function postSua(Request $request, $id)
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\TheLoai  $theLoai
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
     {
         $theloai = TheLoai::find($id);
         $this->validate(
@@ -59,12 +103,19 @@ class TheLoaiController extends Controller
         $theloai->Ten = $request->Ten;
         $theloai->TenKhongDau = changeTitle($request->Ten);
         $theloai->save();
-        return redirect('admin/theloai/sua/' . $id)->with('thongbao', 'Sửa thành công!');
+        return redirect('admin/theloai/' . $id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
-    public function getXoa($id)
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\TheLoai  $theLoai
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
     {
         $theloai = TheLoai::find($id);
         $theloai->delete();
-        return redirect('admin/theloai/danhsach')->with('thongbao', 'Xoá thành công!');
+        return redirect('admin/theloai')->with('thongbao', 'Xoá thành công!');
     }
 }
