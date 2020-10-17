@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 class CommentController extends Controller
 {
     // Xoá Comment
-    public function getXoa($id,$idTinTuc)
+    public function destroy($id, $idTinTuc)
     {
         $comment = Comment::find($id);
         $comment->delete();
-        return redirect('admin/tintuc/'.$idTinTuc.'edit')->with('thongbaocomment', 'Xoá comment thành công!');
+        return redirect('admin/tintuc/'.$idTinTuc.'/edit')->with('thongbaocomment', 'Xoá comment thành công!');
     }
 }

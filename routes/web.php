@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function
         Route::get('loaitin/{idTheLoai}', 'AjaxController@getLoaiTin');
     });
     Route::group(['prefix' => 'comment'], function () {
-        Route::get('xoa/{id}/{idTinTuc}', 'CommentController@getXoa');
+        Route::delete('delete/{id}/{idTinTuc}', 'CommentController@destroy');
     });
     Route::resource('user', 'UserController')->except(['show']);
 });

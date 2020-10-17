@@ -126,7 +126,7 @@
                             <td>{{$cm->NoiDung}}</td>
                             <td>{{$cm->created_at}}</td>
                             <td class="center">
-                                <form action="admin/comment/{{$cm->id}}" method="POST">
+                                <form action="admin/comment/delete/{{$cm->id}}/{{$tintuc->id}}" method="POST">
                                     @method('delete')
                                     @csrf
                                     <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>

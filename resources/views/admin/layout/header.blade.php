@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="admin/theloai">Admin</a>
+        <a class="navbar-brand" href="admin/theloai">Trang quản trị Website Tin Tức</a>
     </div>
     <!-- /.navbar-header -->
 
