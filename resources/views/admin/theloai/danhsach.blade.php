@@ -33,8 +33,23 @@
                             <td>{{$tl->id}}</td>
                             <td>{{$tl->Ten}}</td>
                             <td>{{$tl->TenKhongDau}}</td>
+<<<<<<< HEAD
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/theloai/xoa/{{$tl->id}}">Xoá</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/theloai/sua/{{$tl->id}}">Sửa</a></td>
+=======
+                            <td class="center">
+                                <form action="admin/theloai/{{$tl->id}}" method="POST">
+                                    @method('delete') 
+                                    @csrf
+                                    <button type="submit" style="display: inline;" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                                </form>
+                            </td>
+                            <td class="center">
+                                <form action="admin/theloai/{{$tl->id}}/edit">
+                                    <button type="submit" style="display: inline;" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-pencil"></i></button>
+                                </form>
+                            </td>
+>>>>>>> 0cd6c910b8b09a15031c3066d40f89f34170a090
                         </tr>    
                         @endforeach
                     </tbody>
