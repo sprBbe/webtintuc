@@ -56,7 +56,15 @@
                               <a href="/trangchu" class="nav-link text-left">Home</a>
                           </li>
                           <li>
-                              <a href="categories.html" class="nav-link text-left">Xã hội</a>
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Xã hội
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
                           </li>
                           <li>
                               <a href="categories.html" class="nav-link text-left">Thế giới</a>
