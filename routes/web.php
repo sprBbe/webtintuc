@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin/login', [UserController::class,'getdangnhapAdmin']);
+Route::post('admin/login', [UserController::class,'posdangnhapAdmin']);
+Route::get('admin/logout', [UserController::class,'getdangxuatAdmin']);
 
 Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function () {
     Route::resource('theloai', 'TheLoaiController')->except(['show']);

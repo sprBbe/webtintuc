@@ -155,4 +155,37 @@ class UserController extends Controller
         $user->delete();
         return redirect('admin/user')->with('thongbao', 'Xoá thành công!');
     }
+
+    public function getdangnhapAdmin()
+    {
+        return view('admin.login');
+    }
+    public function postdangnhapAdmin(Request $request)
+    {
+        $this->validate(
+            $request,
+            [
+                'Email' => 'required',
+                'Password'=>'required|min:6|max:30',
+            ],
+            [
+                'Email.required' => 'Bạn chưa nhập email người dùng!',
+                'Password.required' => 'Bạn chưa nhập mật khẩu!',
+                'Password.min' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+                'Password.max' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+            ]
+        );
+
+        if(Auth::attempt(['email' => $request->Email, 'password' => $request->Password])){
+            return redirect('admin/theloai');
+        }
+        else{
+            return redirect('admin/login')->with('canhbao', 'Đăng nhập không thành công!');
+        }
+    }
+    public function getdangxuatAdmin()
+    {
+        Auth::logout();
+        return redirect('admin/login');
+    }
 }
