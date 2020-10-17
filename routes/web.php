@@ -19,9 +19,8 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function () {
     Route::resource('theloai', 'TheLoaiController')->except(['show']);
-});
-
-
-Route::group(['prefix' => 'admin','namespace'=>'App\Http\Controllers'], function () {
     Route::resource('slide', 'SlideController')->except(['show']);
 });
+
+
+
