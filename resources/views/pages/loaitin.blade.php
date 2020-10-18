@@ -17,7 +17,6 @@
             <p class="mb-3">{{$tt->TomTat}}</p>
             <div class="post-meta">
               <span class="d-block">Số lượt xem: {{$tt->SoLuotXem}}</span>
-              <span class="date-read">Jun 14 <span class="mx-1">&bullet;</span> 3 min read <span class="icon-star2"></span></span>
             </div>
           </div>
         </div>
@@ -37,7 +36,6 @@
             <h2><a href="tintuc/{{$item['id']}}/{{$item['TieuDeKhongDau']}}.html">{{$item->TieuDe}}</a></h2>
             <div class="post-meta">
               <span class="d-block">{{$item->TomTat}}</span>
-              <span class="date-read">Jun 14 <span class="mx-1">&bullet;</span> 3 min read <span class="icon-star2"></span></span>
             </div>
           </div>
         </div>
