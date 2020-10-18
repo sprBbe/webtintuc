@@ -35,7 +35,7 @@ class PagesController extends Controller
         $tintuc = TinTuc::find($id);
         //$tintuc->SoLuotXem=$tintuc->SoLuotXem+1;
         $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
-        $tinlienquan = TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(4)->get();
+        $tinlienquan = TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->orderby('id', 'desc')->take(5)->get();
         DB::table('TinTuc')->where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
         return view('pages.tintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan]);
     }

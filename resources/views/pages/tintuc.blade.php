@@ -4,10 +4,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 single-content">
-        
+        <div height="1000px">&nbsp;<br>&nbsp;</div>
         <p class="mb-5">
           <img src="upload/tintuc/{{$tintuc->Hinh}}" alt="{{$tintuc->TieuDe}}" alt="Image" class="img-fluid">
-        </p>  
+        </p>
         <h1 class="mb-4">
           {{$tintuc->TieuDe}}
         </h1>
@@ -23,8 +23,8 @@
       <div>
         {!!$tintuc->NoiDung!!}
       </div>
-  
-  
+
+
               <div class="pt-5">
                 <div class="section-title">
                   <h2 class="mb-5">{{$tintuc->comment->count()}} Comments</h2>
@@ -44,7 +44,7 @@
                     @endforeach
                 </ul>
                 <!-- END comment-list -->
-                
+
                 <div class="comment-form-wrap pt-5">
                   <div class="section-title">
                     <h2 class="mb-5">Viết bình luận ...</h2>
@@ -79,6 +79,7 @@
 
 
       <div class="col-lg-3 ml-auto">
+      <div height="1000px">&nbsp;<br>&nbsp;</div>
         <div class="section-title">
           <h2>Tin Cùng Loại</h2>
         </div><?php $temp =1 ?>
@@ -104,7 +105,7 @@
 
 
     </div>
-    
+
   </div>
 </div>
 
