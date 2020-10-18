@@ -38,13 +38,14 @@
 							</div>
 							<br>
 							<div>
+								<input type="checkbox" class="" name="changepassword" id ="changepassword">
 				    			<label>Đổi mật khẩu</label>
-							  	<input type="password" class="form-control password" name="Password" aria-describedby="basic-addon1">
+							  	<input type="password" class="form-control password" name="Password" aria-describedby="basic-addon1" disabled>
 							</div>
 							<br>
 							<div>
 				    			<label>Nhập lại mật khẩu</label>
-							  	<input type="password" class="form-control password" name="PasswordAgain" aria-describedby="basic-addon1">
+							  	<input type="password" class="form-control password" name="PasswordAgain" aria-describedby="basic-addon1" disabled>
 							</div>
 							<br>
 							<button type="submit" class="btn btn-default">Sửa
@@ -61,4 +62,19 @@
     </div>
     <!-- end Page Content -->
 
+@endsection
+@section('script')
+    <script>
+       $(document).ready(function(){
+          $("#changepassword").change(function(){
+            if ($(this).is(":checked")){
+                $(".form-control.password").removeAttr('disabled');
+                //alert("checked");
+            }else{
+                $(".form-control.password").attr('disabled','');
+                //alert("notchecked");
+            }
+          });
+       });
+    </script>
 @endsection

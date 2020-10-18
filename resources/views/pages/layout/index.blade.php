@@ -9,7 +9,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="pages_asset/fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="pages_asset/css/bootstrap.min.css">
