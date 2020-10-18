@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\{TheLoai, Slide,TinTuc,LoaiTin,Comment};
+use App\Models\{TheLoai, Slide,TinTuc,LoaiTin,Comment, User};
+use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
