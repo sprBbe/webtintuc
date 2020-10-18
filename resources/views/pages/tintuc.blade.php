@@ -83,6 +83,7 @@
         <div class="section-title">
           <h2>Tin Cùng Loại</h2>
         </div><?php $temp =1 ?>
+        <div height="100px">&nbsp;<br>&nbsp;</div>
         @foreach ($tinlienquan as $item)
         <div class="trend-entry d-flex">
           <div class="number align-self-start">{{$temp}}<?php $temp++ ?></div>

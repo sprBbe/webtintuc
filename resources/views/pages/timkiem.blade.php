@@ -6,7 +6,7 @@
       <div class="col-lg-9">
         <div height="1000px">&nbsp;<br>&nbsp;</div>
         <div class="section-title">
-          <span class="caption d-block small">Kết quả với:</span>
+          <span class="caption d-block">Kết quả với:</span>
           <h2>{{$tukhoa}}</h2>
         </div>
         @foreach ($tintuc as $tt)
