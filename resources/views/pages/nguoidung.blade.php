@@ -15,12 +15,12 @@
                         <div class="alert alert-danger">
                            @foreach ($errors->all() as $err)
                                {{$err}}<br>
-                           @endforeach
+                           @endforeach       
                         </div>
                         @endif
                         @if (session('thongbao'))
                             <div class="alert alert-success">
-                            {{session('thongbao')}}
+                            {{session('thongbao')}} 
                             </div>
                         @endif
 				    	<form action="nguoidung" method="POST">
@@ -36,7 +36,7 @@
 							  	disabled
 							  	>
 							</div>
-							<br>
+							<br>	
 							<div>
 								<input type="checkbox" class="" name="changepassword" id ="changepassword">
 				    			<label>Đổi mật khẩu</label>
@@ -66,15 +66,16 @@
 @section('script')
     <script>
        $(document).ready(function(){
-          $("#changepassword").change(function(){
-            if ($(this).is(":checked")){
-                $(".form-control.password").removeAttr('disabled');
-                //alert("checked");
-            }else{
-                $(".form-control.password").attr('disabled','');
-                //alert("notchecked");
-            }
-          });
+            $("#changepassword").change(function(){
+                console.log("1");
+                if ($(this).is(":checked")){
+                    $(".password").removeAttr('disabled');
+                    //alert("checked");
+                }else{
+                    $(".password").attr('disabled','');
+                    //alert("notchecked"); 
+                }
+            });
        });
     </script>
 @endsection
