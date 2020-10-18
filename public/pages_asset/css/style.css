@@ -73,12 +73,12 @@ h1, h2, h3, h4, h5,
   background: #000; }
 
 .site-section {
-  padding: 2.5em 0; }
+  padding: 1.5em 0; }
   @media (min-width: 768px) {
     .site-section {
-      padding: 3em 0; } }
+      padding: 2em 0; } }
   .site-section.site-section-sm {
-    padding: 3em 0; }
+    padding: 2em 0; }
 
 .site-section-heading {
   padding-bottom: 20px;
@@ -1304,4 +1304,13 @@ h1, h2, h3, h4, h5,
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+}
+.space-header{
+  padding-top: 3.5em!important; }
+  @media (min-width: 768px) {
+    .space-header {
+      padding: 3em!important; } 
+}
+.space-subcribe{
+  margin-top: 2em;
 }
