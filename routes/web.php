@@ -40,4 +40,4 @@ Route::group(['prefix' => 'admin', 'namespace'=>'App\Http\Controllers', 'middlew
 Route::get('trangchu', [PagesController::class, 'trangchu']);
 Route::get('tintuc/{id}/{TieuDeKhongDau}.html', [PagesController::class, 'tintuc']);
 Route::get('loaitin/{id}/{TenKhongDau}.html', [PagesController::class, 'loaitin']);
-
+Route::get('timkiem', [PagesController::class, 'getTimKiem']);
