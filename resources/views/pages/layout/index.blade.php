@@ -3,7 +3,7 @@
 
 <head>
     <base href="{{asset('')}}">
-    <title>Meranda &mdash; Website Template by Colorlib</title>
+    <title>VINATIN</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,10 +38,10 @@
 
     @include('pages.layout.header')
 
-    
+
     @yield('content')
 
-    
+
     @include('pages.layout.footer')
 
 </div>

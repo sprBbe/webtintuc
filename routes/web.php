@@ -37,4 +37,5 @@ Route::group(['prefix' => 'admin', 'namespace'=>'App\Http\Controllers', 'middlew
     Route::resource('user', 'UserController')->except(['show']);
 });
 
-Route::get('trangchu', [PagesController::class,'trangchu']);
+Route::get('trangchu', [PagesController::class, 'trangchu']);
+Route::get('tintuc/{id}/{TieuDeKhongDau}.html', [PagesController::class, 'tintuc']);
