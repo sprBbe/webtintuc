@@ -25,7 +25,7 @@ class PagesController extends Controller
         $loaitin4 = TinTuc::where('idLoaiTin', 4)->orderby('id','desc')->take(3)->get();
         $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
         $tinmoinhat = TinTuc::orderby('id','desc')->take(3)->get();
-        $binhluan = Comment::orderby('id','desc')->take(5)->get();
+        $binhluan = Comment::orderby('id','desc')->take(4)->get();
         return view('pages.trangchu',['bon_tinnoibat'=>$bon_tinnoibat, 'loaitin1'=>$loaitin1,
         'loaitin2'=>$loaitin2,'loaitin3'=>$loaitin3,'loaitin4'=>$loaitin4,'tinmoinhat'=>$tinmoinhat,
         'trending'=>$trending,'binhluan'=>$binhluan]
@@ -81,7 +81,7 @@ class PagesController extends Controller
             return redirect('trangchu');
         }
         else{
-            return redirect('dangnhap')->with('canhbao', 'Đăng nhập không thành công!');
+            return redirect('login')->with('canhbao', 'Đăng nhập không thành công!');
         }
     }
     function postRegister(Request $request){
