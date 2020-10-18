@@ -46,9 +46,8 @@
                 <!-- END comment-list -->
 
                 <div class="comment-form-wrap pt-5">
-                  <div class="section-title">
-                    <h2 class="mb-5">Viết bình luận ...</h2>
-                  </div>
+                  <form role="form" class="p-5 bg-light" action="comment/{{$tintuc->id}}" method="post">
+                    @csrf
                   @if (count($errors)>0)
                         <div class="alert alert-danger">
                           @foreach ($errors->all() as $err)
@@ -61,8 +60,9 @@
                           {{session('thongbao')}}
                         </div>
                   @endif
-                  <form role="form" action="binhluan/{{$tintuc->id}}" method="post">
-                    @csrf
+                    <div class="section-title">
+                      <h2 class="mb-5">Viết bình luận ...</h2>
+                    </div>
                     <div class="form-group">
                         <textarea class="form-control" rows="3" name="Binhluan"
                             @if (!Auth::check())
@@ -70,7 +70,7 @@
                             @endif>@if (!Auth::check()){{"Đăng nhập để bình luận..."}}@endif</textarea>
                     </div>
                     <div class="form-group">
-                      <input type="submit" value="Gửi" class="btn btn-primary py-3">
+                      <input type="submit" value="Gửi" class="btn btn-primary py-2">
                     </div>
                 </form>
                 </div>

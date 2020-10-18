@@ -46,3 +46,4 @@ Route::post('login', [PagesController::class, 'postLogin']);
 Route::get('logout', [PagesController::class, 'getLogout']);
 Route::get('register', [PagesController::class, 'getRegister']);
 Route::post('register', [PagesController::class, 'postRegister']);
+Route::post('comment/{id}', [PagesController::class, 'postbinhluan']);

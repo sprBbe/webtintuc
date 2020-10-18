@@ -106,13 +106,22 @@ class PagesController extends Controller
         $user = new User();
         $user->name = $request->Ten;
         $user->email = $request->Email;
+        $user->quyen = 0;
         $user->password = bcrypt($request->Password);
         $user->save();
-        return redirect('dangky')->with('thongbao', 'Đăng ký thành công!');
+        return redirect('register')->with('thongbao', 'Đăng ký thành công!');
     }
     public function getLogout()
     {
         Auth::logout();
         return redirect('trangchu');
+    }
+    function postbinhluan(Request $request, $id){
+        $comment = new Comment();
+        $comment->idTinTuc = $id;
+        $comment->idUser = Auth::user()->id;
+        $comment->NoiDung = $request->Binhluan;
+        $comment->save();
+        return redirect('tintuc/'.$id.'/'.$comment->tintuc->TieuDeKhongDau.'.html')->with('thongbao', 'Thêm bình luận thành công!');
     }
 }

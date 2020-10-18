@@ -29,7 +29,7 @@
                         @endif
                         @if (session('thongbao'))
                             <div class="alert alert-success">
-                            {{session('thongbao')}}<a href="dangnhap"> Đăng nhập!</a>
+                            {{session('thongbao')}}<a href="login"> Đăng nhập!</a>
                             </div>
                         @endif
 				    	<form action="register" method="post">
