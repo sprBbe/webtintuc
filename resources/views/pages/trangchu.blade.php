@@ -184,7 +184,7 @@
                     </div>
                 </div>
                 @endforeach
-                
+
             </div>
             <div class="col-lg-3">
                 <div class="section-title">
@@ -203,7 +203,7 @@
                     </div>
                     </div>
                 @endforeach
-                
+
 
                 <p>
                     <a href="#" class="more">See All Popular <span class="icon-keyboard_arrow_right"></span></a>
@@ -221,7 +221,7 @@
                     <div class="half-post-entry d-block d-lg-flex bg-light">
                         <img src="upload/slide/{{$sl->Hinh}}" alt="none" style="width : 30rem">
                         <div class="contents">
-                            <h2><a href="{{$sl->link}}">{{$sl->Ten}}</a></h2>
+                            <h2><a href="https://{{$sl->link}}">{{$sl->Ten}}</a></h2>
                             <p class="mb-3">{{$sl->NoiDung}}</p>
                         </div>
                     </div>

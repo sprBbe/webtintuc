@@ -46,7 +46,7 @@
                 <!-- END comment-list -->
 
                 <div class="comment-form-wrap pt-5">
-                  
+
                   @if (count($errors)>0)
                         <div class="alert alert-danger">
                           @foreach ($errors->all() as $err)
@@ -89,7 +89,7 @@
         <div class="trend-entry d-flex">
           <div class="number align-self-start">{{$temp}}<?php $temp++ ?></div>
           <div class="trend-contents">
-            <h2><a href="blog-single.html">{{$item->TieuDe}}</a></h2>
+            <h2><a href="tintuc/{{$item['id']}}/{{$item['TieuDeKhongDau']}}.html">{{$item->TieuDe}}</a></h2>
             <div class="post-meta">
               <span class="d-block"><a href="#">@if ($item->NoiBat==0)
                   {{'Tin không được đánh dấu nổi bật!'}}

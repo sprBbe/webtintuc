@@ -19,6 +19,10 @@ Route::get('/', function () {
     return redirect('trangchu');
 });
 
+Route::get('admin', function () {
+    return redirect('admin/theloai');
+});
+
 Route::get('admin/login', [UserController::class,'getdangnhapAdmin']);
 Route::post('admin/login', [UserController::class,'postdangnhapAdmin']);
 Route::get('admin/logout', [UserController::class,'getdangxuatAdmin']);
