@@ -23,7 +23,7 @@
           </div>
           <div class="col-12 col-lg-6 ml-auto d-flex">
               <div class="ml-md-auto top-social d-none d-lg-inline-block">
-                  <a href="#" class="d-inline-block p-3"><span class="icon-facebook"></span></a>
+                  <a href="#" class="d-inline-block p-3"><i class="fas fa-sign-in-alt"></i></a>
                   <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
                   <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
               </div>
