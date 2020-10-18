@@ -1294,3 +1294,14 @@ h1, h2, h3, h4, h5,
 
 .single-content {
   font-size: .9rem; }
+.dropdown-item-2 {
+  display: block;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}

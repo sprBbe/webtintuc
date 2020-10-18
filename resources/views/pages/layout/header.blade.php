@@ -63,7 +63,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach ($tl->loaitin as $lt)
-                                            <a class="dropdown-item" href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a>
+                                            <a class="dropdown-item-2" href="loaitin/{{$lt->id}}/{{$lt->TenKhongDau}}.html">{{$lt->Ten}}</a>
                                         @endforeach
                                         </div>
                                     </li>

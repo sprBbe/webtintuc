@@ -7,7 +7,7 @@
             <div class="site-section">
                 <div class="container">
                     <div class="half-post-entry d-block d-lg-flex bg-light">
-                        <div class="img-bg" style="background-image: url('pages_asset/images/big_img_1.jpg')"></div>
+                        <div class="img-bg" style="background-image: url('upload/tintuc/{{$bon_tin->Hinh}}')"></div>
                         <div class="contents">
                             <span class="caption">TIN TỨC NỔI BẬT</span>
                             <h2><a href="blog-single.html">{{$bon_tin->TieuDe}}</a></h2>
