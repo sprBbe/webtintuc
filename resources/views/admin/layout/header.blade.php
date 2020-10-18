@@ -7,7 +7,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="admin/theloai">Trang quản trị Website Tin Tức</a>
+        <a class="navbar-brand" href="admin/theloai">Trang quản trị VINATIN</a>
     </div>
     <!-- /.navbar-header -->
 

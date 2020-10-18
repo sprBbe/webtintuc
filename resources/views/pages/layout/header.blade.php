@@ -23,9 +23,13 @@
           </div>
           <div class="col-12 col-lg-6 ml-auto d-flex">
               <div class="ml-md-auto top-social d-none d-lg-inline-block">
-                  <a href="#" class="d-inline-block p-3"><i class="fas fa-sign-in-alt"></i></a>
-                  <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
-                  <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
+                @if (!Auth::check())
+                  <a href="login" class="d-inline-block p-3">ĐĂNG NHẬP</a>
+                  <a href="register" class="d-inline-block p-3">ĐĂNG KÝ</a>
+                  @else
+                    <a href="user" class="d-inline-block p-3"><?php echo mb_strtoupper(Auth::user()->name, 'UTF-8');?></a>
+                    <a href="logout" class="d-inline-block p-3">ĐĂNG XUẤT</a>
+                @endif
               </div>
               <form action="timkiem" class="search-form d-inline-block">
 
