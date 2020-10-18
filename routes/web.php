@@ -47,3 +47,5 @@ Route::get('logout', [PagesController::class, 'getLogout']);
 Route::get('register', [PagesController::class, 'getRegister']);
 Route::post('register', [PagesController::class, 'postRegister']);
 Route::post('comment/{id}', [PagesController::class, 'postbinhluan']);
+Route::get('user', [PagesController::class, 'getnguoidung']);
+Route::post('nguoidung', [PagesController::class, 'postnguoidung']);
