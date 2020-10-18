@@ -14,7 +14,9 @@ class PagesController extends Controller
     function __construct()
     {
         $theloai = TheLoai::all();
+        $slide = Slide::all();
         view()->share('theloai',$theloai);
+        view()->share('slide',$slide);
     }
     function trangchu(){
         $bon_tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
