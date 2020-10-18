@@ -10,7 +10,7 @@
                         <div class="img-bg" style="background-image: url('upload/tintuc/{{$bon_tin->Hinh}}')"></div>
                         <div class="contents">
                             <span class="caption">TIN TỨC NỔI BẬT</span>
-                            <h2><a href="blog-single.html">{{$bon_tin->TieuDe}}</a></h2>
+                            <h2><a href="tintuc/{{$bon_tin->id}}/{{$bon_tin->TieuDeKhongDau}}.html">{{$bon_tin->TieuDe}}</a></h2>
                             <p class="mb-3">{{$bon_tin->TomTat}}</p>
 
                             <div class="post-meta">
@@ -44,8 +44,8 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="post-entry-1">
-                            <a href="post-single.html"><img src="upload/tintuc/{{$loaitin1_1->Hinh}}" alt="Image" class="img-fluid"></a>
-                            <h2><a href="blog-single.html">{{$loaitin1_1->TieuDe}}</a></h2>
+                            <a href="tintuc/{{$loaitin1_1['id']}}/{{$loaitin1_1['TieuDeKhongDau']}}.html"><img src="upload/tintuc/{{$loaitin1_1->Hinh}}" alt="Image" class="img-fluid"></a>
+                            <h2><a href="tintuc/{{$loaitin1_1['id']}}/{{$loaitin1_1['TieuDeKhongDau']}}.html">{{$loaitin1_1->TieuDe}}</a></h2>
                             <p>{{$loaitin1_1->TomTat}}</p>
                             <div class="post-meta">
                                 <span class="d-block"><a href="#">
@@ -63,7 +63,7 @@
                             <div class="thumbnail"
                                  style="background-image: url('upload/tintuc/{{$loaitin1_3->Hinh}}')"></div>
                             <div class="contents">
-                                <h2><a href="blog-single.html">{{$loaitin1_3->TieuDe}}</a>
+                                <h2><a href="tintuc/{{$loaitin1_3->id}}/{{$loaitin1_3->TieuDeKhongDau}}.html">{{$loaitin1_3->TieuDe}}</a>
                                 </h2>
                                 <div class="post-meta">
                                     <span class="d-block"><a href="#">@if ($loaitin1_1->NoiBat==0)
@@ -88,7 +88,7 @@
                 <div class="trend-entry d-flex">
                     <div class="number align-self-start">{{$temp}}<?php $temp++ ?></div>
                     <div class="trend-contents">
-                        <h2><a href="blog-single.html">{{$tr->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$tr->id}}/{{$tr->TieuDeKhongDau}}.html">{{$tr->TieuDe}}</a></h2>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">{{$tr->loaitin->Ten}}</a></span>
                             <span class="date-read">{{$tr->updated_at}}<span class="mx-1">&bullet;</span>{{$tr->SoLuotXem}} lượt xem</span>
@@ -121,7 +121,7 @@
                 <div class="post-entry-2 d-flex">
                     <div class="thumbnail" style="background-image: url('upload/tintuc/{{$lt2->Hinh}}')"></div>
                     <div class="contents">
-                        <h2><a href="blog-single.html">{{$lt2->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$lt2->id}}/{{$lt2->TieuDeKhongDau}}.html">{{$lt2->TieuDe}}</a></h2>
                         <p class="mb-3">{{$lt2->TomTat}}</p>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">@if ($lt2->NoiBat==0)
@@ -142,7 +142,7 @@
                 <div class="post-entry-2 d-flex">
                     <div class="thumbnail" style="background-image: url('upload/tintuc/{{$lt3->Hinh}}')"></div>
                     <div class="contents">
-                        <h2><a href="blog-single.html">{{$lt3->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$lt3->id}}/{{$lt3->TieuDeKhongDau}}.html">{{$lt3->TieuDe}}</a></h2>
                         <p class="mb-3">{{$lt3->TomTat}}</p>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">@if ($lt3->NoiBat==0)
@@ -172,7 +172,7 @@
                     <div class="thumbnail order-md-2"
                          style="background-image: url('upload/tintuc/{{$moinhat->Hinh}}')"></div>
                     <div class="contents order-md-1 pl-0">
-                        <h2><a href="blog-single.html">{{$moinhat->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$moinhat->id}}/{{$moinhat->TieuDeKhongDau}}.html">{{$moinhat->TieuDe}}</a></h2>
                         <p class="mb-3">{{$moinhat->TomTat}}</p>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">@if ($loaitin1_1->NoiBat==0)
@@ -195,7 +195,7 @@
                     <div class="trend-entry d-flex">
                     <div class="number align-self-start">{{$temp}}<?php $temp++ ?></div>
                     <div class="trend-contents">
-                        <h2><a href="blog-single.html">{{$bl->tintuc->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$bl->id}}/{{$bl->TieuDeKhongDau}}.html">{{$bl->tintuc->TieuDe}}</a></h2>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">{{$bl->NoiDung}}</a></span>
                             <span class="date-read">{{$bl->updated_at}}<span class="mx-1">&bullet;</span>{{$bl->user->name}}</span>
