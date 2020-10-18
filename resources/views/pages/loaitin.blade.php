@@ -44,7 +44,7 @@
         @endforeach
 
         <p>
-          <a href="#" class="more">See All Popular <span class="icon-keyboard_arrow_right"></span></a>
+          <a href="#" class="more">Xem Thêm <span class="icon-keyboard_arrow_right"></span></a>
         </p>
       </div>
     </div>
