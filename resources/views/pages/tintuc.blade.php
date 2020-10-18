@@ -2,7 +2,8 @@
 @extends('pages.layout.index')
 @section('content')
 <!-- Page Content -->
-<div class="container">
+<div class="site-section">
+  <div class="container">
   <div class="row">
     <div class="col-lg-8 single-content">
 
@@ -91,5 +92,7 @@
     </div>
   </div>
 </div>
+</div>
+
 <!-- end Page Content -->
 @endsection
