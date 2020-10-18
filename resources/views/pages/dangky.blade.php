@@ -1,15 +1,19 @@
 @extends('pages.layout.index')
 @section('content')
+
+       <div height="1500px">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
        <!-- Page Content -->
        <div class="container">
 
     	<!-- slider -->
     	<div class="row carousel-holder">
+            
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
                 <div class="panel panel-default">
-				  	<div class="panel-heading">Đăng ký tài khoản</div>
+                      <div class="panel-heading lead">ĐĂNG KÝ TÀI KHOẢN</div>
+                      <div height="100px">&nbsp;<br>&nbsp;</div>
 				  	<div class="panel-body">
                         @if (count($errors)>0)
                         <div class="alert alert-danger">
@@ -28,7 +32,7 @@
                             {{session('thongbao')}}<a href="dangnhap"> Đăng nhập!</a>
                             </div>
                         @endif
-				    	<form action="dangky" method="post">
+				    	<form action="register" method="post">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 				    		<div>
 				    			<label>Họ tên</label>

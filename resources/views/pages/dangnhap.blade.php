@@ -1,5 +1,6 @@
 @extends('pages.layout.index')
 @section('content')
+    <div height="1500px">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
     <!-- Page Content -->
     <div class="container">
 
@@ -8,7 +9,8 @@
     		<div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="panel panel-default">
-				  	<div class="panel-heading">Đăng nhập</div>
+                      <div class="panel-heading lead">ĐĂNG NHẬP</div>
+                      <div height="100px">&nbsp;<br>&nbsp;</div>
 				  	<div class="panel-body">
                         @if (count($errors)>0)
                         <div class="alert alert-danger">
@@ -27,7 +29,7 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
-				    	<form action="dangnhap" method="post">
+				    	<form action="login" method="post">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							<div>
 				    			<label>Email</label>
