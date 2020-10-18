@@ -39,4 +39,19 @@ class PagesController extends Controller
         DB::table('TinTuc')->where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
         return view('pages.tintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan]);
     }
+
+    function loaitin($id){
+        $loaitin = LoaiTin::find($id);
+        $tintuc = TinTuc::where('idLoaiTin',$id)->paginate(5);
+        $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
+        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat]);
+    }
+
+    function getTimKiem(Request $request){
+        $tukhoa=$request->get('TimKiem');
+        $tintuc = TinTuc::where('TieuDe','like',"%$tukhoa%")->orwhere('TomTat','like',"%$tukhoa%")->
+        orwhere('NoiDung','like',"%$tukhoa%")->take(30)->paginate(5);
+        $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
+        return view('pages.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tinnoibat'=>$tinnoibat]);
+    }
 }

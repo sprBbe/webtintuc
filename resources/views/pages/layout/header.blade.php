@@ -27,10 +27,10 @@
                   <a href="#" class="d-inline-block p-3"><span class="icon-twitter"></span></a>
                   <a href="#" class="d-inline-block p-3"><span class="icon-instagram"></span></a>
               </div>
-              <form action="#" class="search-form d-inline-block">
+              <form action="timkiem" class="search-form d-inline-block">
 
                   <div class="d-flex">
-                      <input type="email" class="form-control" placeholder="Search...">
+                      <input type="text" class="form-control" name="TimKiem" placeholder="Tìm kiếm từ khóa ...">
                       <button type="submit" class="btn btn-secondary"><span class="icon-search"></span></button>
                   </div>
               </form>
