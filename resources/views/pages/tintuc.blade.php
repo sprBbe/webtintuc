@@ -1,4 +1,3 @@
-
 @extends('pages.layout.index')
 @section('content')
 <!-- Page Content -->

@@ -3,15 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use Illuminate\Support\Facades\DB;
-use App\Models\{TheLoai, Slide,TinTuc,LoaiTin};
-=======
-use App\Models\{Comment, TheLoai, Slide,TinTuc,LoaiTin};
-use Illuminate\Support\Facades\DB;
-use SebastianBergmann\Environment\Console;
-use Carbon\Carbon;
->>>>>>> 213bc51047f58b87feb9c7fa6aef6b26aaa5e349
+use App\Models\{TheLoai, Slide,TinTuc,LoaiTin,Comment};
 
 class PagesController extends Controller
 {
