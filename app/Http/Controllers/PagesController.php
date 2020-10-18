@@ -54,4 +54,64 @@ class PagesController extends Controller
         $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
         return view('pages.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tinnoibat'=>$tinnoibat]);
     }
+
+    function getLogin(){
+        return view('pages.dangnhap');
+    }
+    function getRegister(){
+        return view('pages.dangky');
+    }
+    function postLogin(Request $request){
+        $this->validate(
+            $request,
+            [
+                'Email' => 'required',
+                'Password'=>'required|min:6|max:30',
+            ],
+            [
+                'Email.required' => 'Bạn chưa nhập email người dùng!',
+                'Password.required' => 'Bạn chưa nhập mật khẩu!',
+                'Password.min' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+                'Password.max' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+            ]
+        );
+
+        if(Auth::attempt(['email' => $request->Email, 'password' => $request->Password])){
+            return redirect('trangchu');
+        }
+        else{
+            return redirect('dangnhap')->with('canhbao', 'Đăng nhập không thành công!');
+        }
+    }
+    function postRegister(Request $request){
+        $this->validate(
+            $request,
+            [
+                'Ten' => 'required|min:2|max:100',
+                'Password'=>'required|min:6|max:30',
+                'PasswordAgain'=>'required|same:Password',
+            ],
+            [
+                'Ten.required' => 'Bạn chưa nhập tên người dùng!',
+                'Ten.min' => 'Tên thể loại phải có độ dài từ 2 đến 100 ký tự!',
+                'Ten.max' => 'Tên thể loại phải có độ dài từ 2 đến 100 ký tự!',
+                'Password.required' => 'Bạn chưa nhập mật khẩu!',
+                'Password.min' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+                'Password.max' => 'Mật khẩu phải có độ dài từ 6 đến 30 ký tự!',
+                'PasswordAgain.required' => 'Bạn chưa nhập lại mật khẩu!',
+                'PasswordAgain.same' => 'Mật khẩu nhập lại không khớp!',
+            ]
+        );
+        $user = new User();
+        $user->name = $request->Ten;
+        $user->email = $request->Email;
+        $user->password = bcrypt($request->Password);
+        $user->save();
+        return redirect('dangky')->with('thongbao', 'Đăng ký thành công!');
+    }
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect('trangchu');
+    }
 }
