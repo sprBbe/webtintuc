@@ -1,5 +1,6 @@
 @extends('pages.layout.index')
 @section('content')
+<div height="1500px">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;</div>
     <!-- Page Content -->
     <div class="container">
 
@@ -9,7 +10,7 @@
             </div>
             <div class="col-md-8">
                 <div class="panel panel-default">
-				  	<div class="panel-heading">Thông tin tài khoản</div>
+				  	<div class="panel-heading lead">Thông tin tài khoản</div>
 				  	<div class="panel-body">
                         @if (count($errors)>0)
                         <div class="alert alert-danger">
@@ -23,7 +24,7 @@
                             {{session('thongbao')}} 
                             </div>
                         @endif
-				    	<form action="nguoidung" method="POST">
+				    	<form action="nguoidung" method="POST" class="p-5 bg-light">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 				    		<div>
 				    			<label>Họ tên</label>
@@ -38,7 +39,7 @@
 							</div>
 							<br>	
 							<div>
-								<input type="checkbox" class="" name="changepassword" id ="changepassword">
+								<input type="checkbox" class="form-check-input" name="changepassword" id ="changepassword">
 				    			<label>Đổi mật khẩu</label>
 							  	<input type="password" class="form-control password" name="Password" aria-describedby="basic-addon1" disabled>
 							</div>
@@ -67,7 +68,6 @@
     <script>
        $(document).ready(function(){
             $("#changepassword").change(function(){
-                console.log("1");
                 if ($(this).is(":checked")){
                     $(".password").removeAttr('disabled');
                     //alert("checked");

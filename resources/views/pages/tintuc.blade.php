@@ -46,8 +46,7 @@
                 <!-- END comment-list -->
 
                 <div class="comment-form-wrap pt-5">
-                  <form role="form" class="p-5 bg-light" action="comment/{{$tintuc->id}}" method="post">
-                    @csrf
+                  
                   @if (count($errors)>0)
                         <div class="alert alert-danger">
                           @foreach ($errors->all() as $err)
@@ -61,8 +60,10 @@
                         </div>
                   @endif
                     <div class="section-title">
-                      <h2 class="mb-5">Viết bình luận ...</h2>
+                      <h2 class="mb-5-1">Viết bình luận ...</h2>
                     </div>
+                    <form role="form" class="p-5 bg-light" action="comment/{{$tintuc->id}}" method="post">
+                      @csrf
                     <div class="form-group">
                         <textarea class="form-control" rows="3" name="Binhluan"
                             @if (!Auth::check())

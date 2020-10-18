@@ -29,7 +29,7 @@
                                 {{session('thongbao')}}
                             </div>
                         @endif
-				    	<form action="login" method="post">
+				    	<form action="login" method="post" class="p-5 bg-light">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 							<div>
 				    			<label>Email</label>

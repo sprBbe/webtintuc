@@ -40,7 +40,7 @@
 
 
     @yield('content')
-
+    
 
     @include('pages.layout.footer')
 
@@ -67,7 +67,7 @@
 <script src="https://kit.fontawesome.com/c45f8305b6.js" crossorigin="anonymous"></script>
 
 <script src="pages_asset/js/main.js"></script>
-
+@yield('script')
 </body>
 
 </html>

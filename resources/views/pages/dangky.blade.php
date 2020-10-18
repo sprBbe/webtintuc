@@ -32,7 +32,7 @@
                             {{session('thongbao')}}<a href="login"> Đăng nhập!</a>
                             </div>
                         @endif
-				    	<form action="register" method="post">
+				    	<form action="register" method="post" class="p-5 bg-light">
                             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
 				    		<div>
 				    			<label>Họ tên</label>
