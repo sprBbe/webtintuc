@@ -1,5 +1,5 @@
 @extends('pages.layout.index')
-@section('content')  
+@section('content')
 
 <div class="site-section py-0">
     <div class="owl-carousel hero-slide owl-style">
@@ -380,7 +380,7 @@
         </div>
     </div>
 </div>
-<div class="py-0">
+<!-- <div class="py-0">
     <div class="container">
         <div class="half-post-entry d-block d-lg-flex bg-light">
             <div class="img-bg" style="background-image: url('pages_asset/images/big_img_1.jpg')"></div>
@@ -401,6 +401,24 @@
             </div>
         </div>
     </div>
+</div> -->
+
+<div class="site-section py-0">
+    <div class="owl-carousel hero-slide owl-style">
+        @foreach ($slide as $sl)
+            <div class="site-section">
+                <div class="container">
+                    <div class="half-post-entry d-block d-lg-flex bg-light">
+                        <img src="upload/slide/{{$sl->Hinh}}" alt="none" style="width : 30rem">
+                        <div class="contents">
+                            <h2><a href="https://{{$sl->link}}">{{$sl->Ten}}</a></h2>
+                            <p class="mb-3">{{$sl->NoiDung}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 </div>
 
 <div class="site-section subscribe bg-light">
@@ -420,5 +438,7 @@
         </form>
     </div>
 </div>
+
+
 
 @endsection
