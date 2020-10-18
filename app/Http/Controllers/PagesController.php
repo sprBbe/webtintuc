@@ -4,13 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
-use App\Models\{Comment, TheLoai, Slide,TinTuc,LoaiTin};
-use SebastianBergmann\Environment\Console;
-use Carbon\Carbon;
-=======
 use App\Models\{TheLoai, Slide,TinTuc,LoaiTin,Comment};
->>>>>>> bd76c5ecca2df9f0a0ba6a7a354046fceedef2b2
 
 class PagesController extends Controller
 {
@@ -44,5 +38,12 @@ class PagesController extends Controller
         $tinlienquan = TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->take(4)->get();
         DB::table('TinTuc')->where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
         return view('pages.tintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan]);
+    }
+
+    function loaitin($id){
+        $loaitin = LoaiTin::find($id);
+        $tintuc = TinTuc::where('idLoaiTin',$id)->paginate(5);
+        $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
+        return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat]);
     }
 }
