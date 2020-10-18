@@ -9,7 +9,7 @@
 
 
     <link href="https://fonts.googleapis.com/css?family=B612+Mono|Cabin:400,700&display=swap" rel="stylesheet">
-
+    
     <link rel="stylesheet" href="pages_asset/fonts/icomoon/style.css">
 
     <link rel="stylesheet" href="pages_asset/css/bootstrap.min.css">
@@ -64,7 +64,7 @@
 <script src="pages_asset/js/jquery.fancybox.min.js"></script>
 <script src="pages_asset/js/jquery.sticky.js"></script>
 <script src="pages_asset/js/jquery.mb.YTPlayer.min.js"></script>
-
+<script src="https://kit.fontawesome.com/c45f8305b6.js" crossorigin="anonymous"></script>
 
 <script src="pages_asset/js/main.js"></script>
 
