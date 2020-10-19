@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 19, 2020 at 08:01 PM
+-- Generation Time: Oct 19, 2020 at 08:00 PM
 -- Server version: 8.0.21-0ubuntu0.20.04.4
 -- PHP Version: 7.4.3
 
@@ -22,21 +22,6 @@ SET time_zone = "+00:00";
 -- Database: `webtintuc_BTL_DBMS`
 --
 
--- --------------------------------------------------------
-
---
--- Table structure for table `Comment`
---
-
-CREATE TABLE `Comment` (
-  `id` bigint UNSIGNED NOT NULL,
-  `idUser` bigint UNSIGNED NOT NULL,
-  `idTinTuc` bigint UNSIGNED NOT NULL,
-  `NoiDung` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `Comment`
 --
@@ -48,37 +33,6 @@ INSERT INTO `Comment` (`id`, `idUser`, `idTinTuc`, `NoiDung`, `created_at`, `upd
 (4, 1, 7, 'Dù là cơn mưa băng giá...', '2020-10-18 01:15:40', '2020-10-18 01:15:40'),
 (5, 1, 13, 'Sau này gặp em anh muốn biết...', '2020-10-18 01:16:22', '2020-10-18 01:16:22'),
 (6, 1, 15, ':V Nên viết gì bây giờ!', '2020-10-18 01:40:36', '2020-10-18 01:40:36');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `failed_jobs`
---
-
-CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
-  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `LoaiTin`
---
-
-CREATE TABLE `LoaiTin` (
-  `id` bigint UNSIGNED NOT NULL,
-  `idTheLoai` bigint UNSIGNED NOT NULL,
-  `Ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenKhongDau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `LoaiTin`
@@ -123,18 +77,6 @@ INSERT INTO `LoaiTin` (`id`, `idTheLoai`, `Ten`, `TenKhongDau`, `created_at`, `u
 (36, 8, 'Nhà', 'nha', '2020-10-18 00:47:52', '2020-10-18 00:47:52'),
 (37, 8, 'Tiêu dùng', 'tieu-dung', '2020-10-18 00:47:58', '2020-10-18 00:47:58');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `migrations`
 --
@@ -150,34 +92,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (8, '2020_10_16_142149_create_comments_table', 1),
 (9, '2020_10_17_064333_update__users_table', 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `password_resets`
---
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Slide`
---
-
-CREATE TABLE `Slide` (
-  `id` bigint UNSIGNED NOT NULL,
-  `Ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Hinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `NoiDung` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `Slide`
 --
@@ -186,20 +100,6 @@ INSERT INTO `Slide` (`id`, `Ten`, `Hinh`, `NoiDung`, `link`, `created_at`, `upda
 (1, 'Zalo - Gọi Video sắc nét', 'OF3m_unnamed.jpg', 'Zalo là ứng dụng nhắn tin kiểu mới và kết nối cộng đồng hàng đầu cho người dùng di động Việt. Tốc độ gửi tin nhắn cực nhanh, bạn luôn nhận được thông báo khi có tin nhắn mới kể cả khi không mở ứng dụng. Thể hiện cảm xúc với emoticon và hình động vui nhộn.', 'https://play.google.com/store/apps/details?id=com.zing.zalo&hl=vi', '2020-10-18 01:26:50', '2020-10-18 01:26:50'),
 (2, 'Twitter', 'xoaT_-SGZioPb_400x400.jpg', 'From breaking news and entertainment to sports and politics, get the full story with all the live commentary.', 'https://twitter.com/', '2020-10-18 01:28:55', '2020-10-18 01:30:43'),
 (3, 'VINATIN', 'woBs_Screenshot 2020-10-18 223838.png', 'Trang web tin tức hề hước cho giới troẻ... Chỗ này là viết cho nó dài hơn thôi!', 'www.vinatin.khong_phai_link_nay.com', '2020-10-18 01:39:32', '2020-10-18 01:39:32');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TheLoai`
---
-
-CREATE TABLE `TheLoai` (
-  `id` bigint UNSIGNED NOT NULL,
-  `Ten` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TenKhongDau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `TheLoai`
@@ -214,26 +114,6 @@ INSERT INTO `TheLoai` (`id`, `Ten`, `TenKhongDau`, `created_at`, `updated_at`) V
 (6, 'Giáo dục', 'giao-duc', '2020-10-18 00:36:50', '2020-10-18 00:36:50'),
 (7, 'Sức khỏe', 'suc-khoe', '2020-10-18 00:37:49', '2020-10-18 00:37:49'),
 (8, 'Đời sống', 'doi-song', '2020-10-18 00:37:56', '2020-10-18 00:37:56');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TinTuc`
---
-
-CREATE TABLE `TinTuc` (
-  `id` bigint UNSIGNED NOT NULL,
-  `TieuDe` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TieuDeKhongDau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `TomTat` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `NoiDung` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Hinh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `NoiBat` int NOT NULL DEFAULT '0',
-  `SoLuotXem` bigint NOT NULL DEFAULT '0',
-  `idLoaiTin` bigint UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `TinTuc`
@@ -259,24 +139,6 @@ INSERT INTO `TinTuc` (`id`, `TieuDe`, `TieuDeKhongDau`, `TomTat`, `NoiDung`, `Hi
 (15, 'Campuchia bắt ngư dân Việt sở hữu hơn 280 bình cổ', 'campuchia-bat-ngu-dan-viet-so-huu-hon-280-binh-co', 'Campuchia bắt một ngư dân Việt Nam ở tỉnh Sihanoukville vì sở hữu 281 chiếc bình cổ mà anh này tìm được ở đáy biển.', '<p>Campuchia bắt một ngư dân Việt Nam ở tỉnh Sihanoukville vì sở hữu 281 chiếc bình cổ mà anh này tìm được ở đáy biển.</p>\r\n\r\n<p>Le Vanghoun, 42 tuổi, bị quân cảnh bắt hôm 17/9 và qua thẩm vấn, khai báo rằng mình phát hiện các món đồ thủ công dưới vùng biển Koh Russey, một trong những nhóm đảo nhỏ thuộc Vịnh Thái Lan, nằm cách bờ biển thành phố Sihanoukville ở phía nam Campuchia khoảng 4,5 km.</p>\r\n\r\n<p>\"Anh ta đã lấy 281 chiếc bình này từ dưới biển, nhưng tôi không biết làm thế nào anh ta biết được có nhiều chiếc bình như thế ở vị trí này\", giám đốc Sở Văn hóa và Mỹ thuật tỉnh But Bopha nói hôm 28/9. \"Giới chức sẽ kiểm tra lịch sử những chiếc bình trước khi quyết định giữ chúng tại bảo tàng tỉnh Preah Sihanouk hay gửi đến một bảo tàng ở Phnom Penh\".</p>\r\n\r\n<div class=\"fig-picture\" style=\"margin: 0px; padding: 0px 0px 377.938px; box-sizing: border-box; text-rendering: optimizelegibility; width: 670px; float: left; display: table; justify-content: center; background: rgb(240, 238, 234); position: relative;\"><img alt=\"[Caption] The 281 ancient vases were reportedly found under the sea in Koh Russey area in Commune III, Sihanoukville. POLICE\" class=\"lazied lazy\" src=\"https://i1-vnexpress.vnecdn.net/2020/09/29/the-281-ancient-vases-were-rep-4114-9847-1601364286.jpg?w=680&amp;h=0&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=WgEi3ae7EtBylI5NDZ06IQ\" style=\"border:0px; box-sizing:border-box; font-size:0px; left:0px; line-height:0; margin:0px; max-height:700px; max-width:100%; padding:0px; position:absolute; text-rendering:optimizelegibility; top:0px; width:670px\" />\r\n<div class=\"embed-container\" style=\"margin-top: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-left: 0px; box-sizing: border-box; text-rendering: optimizelegibility; position: absolute; height: 100px; overflow: hidden; clear: both; width: 670px; bottom: 0px; margin-bottom: 0px !important; padding-bottom: 0px !important;\">&nbsp;</div>\r\n</div>\r\n\r\n<p>281 chiếc bình cổ dưới vùng biển Koh Russey, tỉnh Sihanoukville. Ảnh:&nbsp;<em>Phnom Penh Post</em></p>\r\n\r\n<p>Ngư dân người Việt cho biết đã tìm những chiếc bình trên ở cùng địa điểm, không có vật thể gì trong bình. Giới chức nói những chiếc bình có cả kích thước nhỏ, trung bình và lớn.</p>\r\n\r\n<p>Theo ông Bopha, cảnh sát ban đầu cho rằng kích cỡ và mẫu mã bình tương tự những cổ vật được phát hiện gần đây tại tỉnh Koh Kong. Các chuyên gia tin rằng chúng có từ khoảng thế kỷ 15-17.</p>', '31FQ_the-281-ancient-vases-were-rep-4114-9847-1601364286.jpg', 1, 2, 3, '2020-10-18 01:20:52', '2020-10-18 01:20:52'),
 (16, 'Người gốc Việt đối mặt lệnh trục xuất khỏi Mỹ sau 20 năm tù', 'nguoi-goc-viet-doi-mat-lenh-truc-xuat-khoi-my-sau-20-nam-tu', 'Ông Tin Nguyen được ân xá vào năm ngoái sau 20 năm ngồi tù, nhưng chưa kịp làm lại cuộc đời thì đối mặt với nguy cơ trục xuất về Việt Nam.', '<p>Ông Tin Nguyen được ân xá vào năm ngoái sau 20 năm ngồi tù, nhưng chưa kịp làm lại cuộc đời thì đối mặt với nguy cơ trục xuất về Việt Nam.</p>\r\n\r\n<p>Ông Tin Nguyen, 47 tuổi, sang Mỹ tị nạn khi mới là một cậu bé 6 tuổi vào năm 1979. Học lớp hai ở thành phố Pomona, bang California, Nguyen là đứa trẻ Việt Nam duy nhất trong lớp và trở thành mục tiêu bắt nạt.</p>\r\n\r\n<p>Đến tuổi thiếu niên, ông dùng ma túy, uống rượu rồi gia nhập các băng nhóm Việt Nam, một ở Pomona, sau đó là ở Los Angeles. Năm 1996, Nguyen sát hại một nhà nhập khẩu trang sức ở San Jose. Ba năm sau, Nguyen bị kết án 20 năm tù vì tội giết người cướp của và không được ân xá.</p>\r\n\r\n<p>Trong hai thập kỷ qua, Nguyen cảm thấy rất ăn năn về tội lỗi của mình và theo gia đình cũng như những người ủng hộ, ông đã cố gắng xoay chuyển cuộc đời mình trong tù.</p>\r\n\r\n<p>Trong một cuộc phỏng vấn năm 2018 với tờ Boom California, Nguyen cho hay: \"Tôi không biết làm sao để bày tỏ sự hối hận của mình và nói lời xin lỗi tới người đàn ông đã bị tôi cướp mất cuộc đời và tương lai, tới một gia đình mà tôi đã làm tổn thương, hay tới cộng đồng mà tôi đã gây hại? Điều đó vẫn chưa đủ. Và tôi nhận ra rằng tôi phải làm điều đó trong tù\".</p>\r\n\r\n<div class=\"fig-picture\" style=\"margin: 0px; padding: 0px 0px 376.625px; box-sizing: border-box; text-rendering: optimizelegibility; width: 670px; float: left; display: table; justify-content: center; background: rgb(240, 238, 234); position: relative;\"><img alt=\"Ông Tin Nguyen và mẹ, bà Thi Cuc Le, 84 tuổi, ở hạt San Bernardino, tại lễ tốt nghiệp chương trình dạy tù nhân huấn luyện chó trị liệu vào năm 2018. Ảnh: VietRise.\" class=\"lazied lazy\" src=\"https://i1-vnexpress.vnecdn.net/2020/09/23/Tin-Nguyen-horizontal-1-7586-1600850638.jpg?w=680&amp;h=0&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=Xotqp8OozRwqyIp-AsV1jw\" style=\"border:0px; box-sizing:border-box; font-size:0px; left:0px; line-height:0; margin:0px; max-height:700px; max-width:100%; padding:0px; position:absolute; text-rendering:optimizelegibility; top:0px; width:670px\" />\r\n<div class=\"embed-container\" style=\"margin-top: 0px; margin-right: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-left: 0px; box-sizing: border-box; text-rendering: optimizelegibility; position: absolute; height: 100px; overflow: hidden; clear: both; width: 670px; bottom: 0px; margin-bottom: 0px !important; padding-bottom: 0px !important;\">&nbsp;</div>\r\n</div>\r\n\r\n<p>Ông Tin Nguyen và mẹ, bà Thi Cuc Le, 84 tuổi, ở hạt San Bernardino, tại lễ tốt nghiệp chương trình dạy tù nhân huấn luyện chó trị liệu vào năm 2018. Ảnh:&nbsp;<em>VietRise</em>.</p>\r\n\r\n<p>Nguyen đã tham gia các lớp học cao đẳng thông qua một chương trình của Đại học bang California tại nhà tù Lancaster. Ông cũng vượt qua nỗi sợ những chú chó để làm việc cho một chương trình huấn luyện cho động vật trị liệu tâm lý.</p>\r\n\r\n<p>\"20 năm trong tù đã thay đổi cuộc đời một người đàn ông\", chị gái của Nguyen, Cheri Li, nói. \"Tin hôm nay đã học cao đẳng, có kỷ luật, có lòng nhân ái và mong muốn cống hiến cho xã hội\".</p>\r\n\r\n<p>Vào đêm Giáng sinh 2018, thống đốc California khi đó là Jerry Brown đã ban lệnh giảm án cho Nguyen. Một sau năm, Nguyen ra tù nhưng lại bị các nhân viên Cơ quan Thực thi Di trú và Hải quan Mỹ ICE) đưa đến một trại giam giữ người nhập cư ở hạt San Bernardino.</p>\r\n\r\n<p>\"Ông ấy chưa bao giờ được bước đi tự do. Ông ấy chưa bao giờ gặp mẹ. Ông ấy chưa bao giờ gặp gia đình\", luật sư Ben Seelig nói.</p>\r\n\r\n<p>Hiện Nguyen bị giam tại Trung tâm Xử lý của ICE Adelanto, đối diện với khả năng bị trục xuất về Việt Nam, nơi ông đã xa cách hàng thập kỷ qua. Các quan chức di trú tìm cách trục xuất Nguyen, một thường trú nhân hợp pháp, vì các tiền án của ông.</p>\r\n\r\n<p>\"Thay vì liên tục chú ý đến các tội phạm, các nhóm vận động nên đưa ra tiếng nói cho những người là nạn nhân của các tội ác nghiêm trọng như giết người. Thật không may, nạn nhân của tội phạm thường bị lãng quên\", David Marin, giám đốc văn phòng hiện trường thuộc bộ phận Hoạt động Thực thi và Xóa bỏ của ICE tại Los Angeles, cho hay trong một tuyên bố hôm 17/9.</p>\r\n\r\n<p>Nếu bị trục xuất về Việt Nam, Nguyen đối mặt với một tương lai khó khăn, không có gia đình, tiếng Việt bị hạn chế.</p>\r\n\r\n<p>\"Những gì sẽ xảy ra nếu ông ấy trở lại Việt Nam là một câu hỏi lớn\", luật sư Seelig nói.</p>\r\n\r\n<p>Hôm 16/9, một ngày sau khi đơn kiến nghị được nộp lên tòa án liên bang xin thả ông Nguyen, gia đình và những người ủng hộ ông đã tập trung bên ngoài văn phòng của ICE tại thành phố Santa Ana để thu hút sự chú ý tới hoàn cảnh của Nguyen. Họ cho rằng việc giam giữ ông bây giờ là vi hiến và vi phạm thỏa thuận mà Việt Nam và Mỹ đã ký kết năm 2008, theo đó những người Việt đến Mỹ trước năm 1995 sẽ không bị trục xuất về nước.</p>\r\n\r\n<p>\"Chúng tôi kêu gọi các quan chức được bầu, các thành viên cộng đồng và cộng đồng người Việt ở quận Cam, hành động để ngăn chặn việc trục xuất một người Việt\", Allison Vo, thành viên tổ chức pháp lý xã hội địa phương VietRise, nói.</p>\r\n\r\n<p>Trong số những người ủng hộ ông Nguyen có hai dân biểu khu vực là Alan Lowenthal và Lou Correa. Cả hai cho rằng ông đã hoàn lương và xứng đáng có một cơ hội khác. Họ cũng nhấn mạnh việc trục xuất ông sẽ vi phạm thỏa thuận Việt - Mỹ năm 2008.</p>\r\n\r\n<p>Ủy viện hội đồng Santa Ana, Vicente Sarmiento, người cũng ủng hộ Nguyen, cho rằng xã hội nên chào đón ông quay lại. \"Nhưng họ làm gì? Họ đợi ở ngoài và giam ông ấy vì một việc khác\".</p>\r\n\r\n<p>Hai giáo sư ở trường đại học bang California ở Los Angeles, nơi đã dạy ông Nguyen trong tù, cũng ủng hộ ông. Giáo sư Taffany Lim là người đã giúp Nguyen tìm luật sư chuyên nghiệp.</p>\r\n\r\n<p>\"Tin không chỉ là một trong những sinh viên giỏi nhất lớp ở Lancaster mà còn là một trong những thủ lĩnh của lớp, một người không ngừng giúp đỡ các bạn học, tổ chức các nhóm học tập, cố vấn cho các học sinh yếu hơn và là nguồn cảm hứng cho tất cả những ai gặp ông ấy\", giáo sư Bidhan Chandra Roy viết trong một bức thư năm 2019 thay mặt Nguyen.</p>\r\n\r\n<p>Luật sư Seelig cho biết tháng trước, chính phủ Mỹ đã trục xuất 30 người Mỹ gốc Việt, trong đó có hơn chục người đến trước năm 1995, bất chấp thỏa thuận song phương. Vụ kiện năm 2018 chống lại việc giam giữ vô thời hạn một số người Việt Nam đang chờ giải quyết.</p>', '7sKH_Tin-Nguyen-horizontal-1-7586-1600850638.jpg', 0, 0, 3, '2020-10-18 01:21:48', '2020-10-18 01:21:48');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `quyen` tinyint NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Dumping data for table `users`
 --
@@ -284,145 +146,6 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `quyen`) VALUES
 (1, 'NT. Dũng', 'tridung240400@gmail.com', NULL, '$2y$10$cVfTEECI4cnPElqCJiowS.b52onh6lZFEKyrf1fVguVi7VNU0VrCC', 'A67DpIvOKJwu7Fm6Nw83jvASURR5FdqT8dYkZGXF3u8eDFaKPfLc8pedFViI', '2016-06-08 13:05:09', '2020-10-18 01:45:34', 1),
 (2, 'Bùi Cao Chinh', 'bcc@gmail.com', NULL, '$2y$10$jGCBozZpCLKM6z/N/nLq6ukWOSZM0K1cx6Ukk9N3GEMGl631zLkdG', NULL, '2020-10-18 01:22:51', '2020-10-18 01:22:51', 1);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `Comment`
---
-ALTER TABLE `Comment`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `comment_iduser_foreign` (`idUser`),
-  ADD KEY `comment_idtintuc_foreign` (`idTinTuc`);
-
---
--- Indexes for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indexes for table `LoaiTin`
---
-ALTER TABLE `LoaiTin`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `loaitin_idtheloai_foreign` (`idTheLoai`);
-
---
--- Indexes for table `migrations`
---
-ALTER TABLE `migrations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD KEY `password_resets_email_index` (`email`);
-
---
--- Indexes for table `Slide`
---
-ALTER TABLE `Slide`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `TheLoai`
---
-ALTER TABLE `TheLoai`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `TinTuc`
---
-ALTER TABLE `TinTuc`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `tintuc_idloaitin_foreign` (`idLoaiTin`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `Comment`
---
-ALTER TABLE `Comment`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `LoaiTin`
---
-ALTER TABLE `LoaiTin`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
-
---
--- AUTO_INCREMENT for table `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `Slide`
---
-ALTER TABLE `Slide`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `TheLoai`
---
-ALTER TABLE `TheLoai`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `TinTuc`
---
-ALTER TABLE `TinTuc`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `Comment`
---
-ALTER TABLE `Comment`
-  ADD CONSTRAINT `comment_idtintuc_foreign` FOREIGN KEY (`idTinTuc`) REFERENCES `TinTuc` (`id`),
-  ADD CONSTRAINT `comment_iduser_foreign` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `LoaiTin`
---
-ALTER TABLE `LoaiTin`
-  ADD CONSTRAINT `loaitin_idtheloai_foreign` FOREIGN KEY (`idTheLoai`) REFERENCES `TheLoai` (`id`);
-
---
--- Constraints for table `TinTuc`
---
-ALTER TABLE `TinTuc`
-  ADD CONSTRAINT `tintuc_idloaitin_foreign` FOREIGN KEY (`idLoaiTin`) REFERENCES `LoaiTin` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
