@@ -46,6 +46,11 @@ class PagesController extends Controller
         return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat]);
     }
 
+    function tinnoibat() {
+        $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(10)->get();
+        return view('pages.tinnoibat', ['tinnoibat'=>$tinnoibat]);
+    }
+
     function getTimKiem(Request $request){
         $tukhoa=$request->get('TimKiem');
         $tintuc = TinTuc::where('TieuDe','like',"%$tukhoa%")->orwhere('TomTat','like',"%$tukhoa%")->
