@@ -54,7 +54,7 @@ class PagesController extends Controller
         return view('pages.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tinnoibat'=>$tinnoibat]);
     }
     function getTrending(){
-        $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
+        $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(10)->get();
         $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
         return view('pages.trending',['trending'=>$trending,'tinnoibat'=>$tinnoibat]);
     }
