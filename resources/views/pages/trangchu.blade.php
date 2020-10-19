@@ -99,7 +99,7 @@
                 @endforeach
 
                 <p>
-                    <a href="#" class="more">See All Trends <span class="icon-keyboard_arrow_right"></span></a>
+                    <a href="trending" class="more">Xem thêm xu hướng<span class="icon-keyboard_arrow_right"></span></a>
                 </p>
 
             </div>

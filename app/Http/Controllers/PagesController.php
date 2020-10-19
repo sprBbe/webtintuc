@@ -34,17 +34,15 @@ class PagesController extends Controller
 
     function tintuc($id) {
         $tintuc = TinTuc::find($id);
-        //$tintuc->SoLuotXem=$tintuc->SoLuotXem+1;
-        $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
         $tinlienquan = TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->orderby('id', 'desc')->take(5)->get();
         DB::table('TinTuc')->where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
-        return view('pages.tintuc',['tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat,'tinlienquan'=>$tinlienquan]);
+        return view('pages.tintuc',['tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan]);
     }
 
     function loaitin($id){
         $loaitin = LoaiTin::find($id);
         $tintuc = TinTuc::where('idLoaiTin',$id)->orderby('id','desc')->paginate(5);
-        $tinnoibat = TinTuc::where('NoiBat',1)->take(4)->get();
+        $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
         return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat]);
     }
 
@@ -55,7 +53,11 @@ class PagesController extends Controller
         $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
         return view('pages.timkiem',['tintuc'=>$tintuc,'tukhoa'=>$tukhoa,'tinnoibat'=>$tinnoibat]);
     }
-
+    function getTrending(){
+        $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
+        $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
+        return view('pages.trending',['trending'=>$trending,'tinnoibat'=>$tinnoibat]);
+    }
     function getLogin(){
         return view('pages.dangnhap');
     }
