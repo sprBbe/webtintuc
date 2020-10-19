@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AutoGenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,4 @@ Route::post('register', [PagesController::class, 'postRegister']);
 Route::post('comment/{id}', [PagesController::class, 'postbinhluan']);
 Route::get('user', [PagesController::class, 'getnguoidung']);
 Route::post('nguoidung', [PagesController::class, 'postnguoidung']);
+Route::get('autogen', [AutoGenController::class, 'autogen']);
