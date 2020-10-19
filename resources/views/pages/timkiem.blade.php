@@ -42,7 +42,7 @@
         @endforeach
 
         <p>
-          <a href="#" class="more">Xem Thêm <span class="icon-keyboard_arrow_right"></span></a>
+          <a href="tinnoibat" class="more">Xem Thêm <span class="icon-keyboard_arrow_right"></span></a>
         </p>
       </div>
     </div>

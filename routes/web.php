@@ -46,6 +46,7 @@ Route::get('tintuc/{id}/{TieuDeKhongDau}.html', [PagesController::class, 'tintuc
 Route::get('loaitin/{id}/{TenKhongDau}.html', [PagesController::class, 'loaitin']);
 Route::get('timkiem', [PagesController::class, 'getTimKiem']);
 Route::get('trending', [PagesController::class, 'getTrending']);
+Route::get('newest_cmt', [PagesController::class, 'getnewest_cmt']);
 Route::get('tinnoibat', [PagesController::class, 'tinnoibat']);
 Route::get('login', [PagesController::class, 'getLogin']);
 Route::post('login', [PagesController::class, 'postLogin']);

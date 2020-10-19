@@ -63,6 +63,11 @@ class PagesController extends Controller
         $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
         return view('pages.trending',['trending'=>$trending,'tinnoibat'=>$tinnoibat]);
     }
+    function getnewest_cmt(){
+        $newest_cmt = Comment::orderby('id','desc')->take(4)->get();
+        $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
+        return view('pages.newest_cmt',['newest_cmt'=>$newest_cmt,'tinnoibat'=>$tinnoibat]);
+    }
     function getLogin(){
         return view('pages.dangnhap');
     }
