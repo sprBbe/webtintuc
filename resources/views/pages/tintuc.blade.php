@@ -101,7 +101,7 @@
         </div>
         @endforeach
         <p>
-          <a href="#" class="more">Xem thêm tin cùng loại<span class="icon-keyboard_arrow_right"></span></a>
+        <a href="loaitin/{{$tintuc->loaitin->id}}/{{$tintuc->loaitin->TenKhongDau}}.html" class="more">Xem thêm tin cùng loại<span class="icon-keyboard_arrow_right"></span></a>
         </p>
       </div>
 
