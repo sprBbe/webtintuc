@@ -195,7 +195,7 @@
                     <div class="trend-entry d-flex">
                     <div class="number align-self-start">{{$temp}}<?php $temp++ ?></div>
                     <div class="trend-contents">
-                        <h2><a href="tintuc/{{$bl->id}}/{{$bl->TieuDeKhongDau}}.html">{{$bl->tintuc->TieuDe}}</a></h2>
+                        <h2><a href="tintuc/{{$bl->tintuc->id}}/{{$bl->tintuc->TieuDeKhongDau}}.html">{{$bl->tintuc->TieuDe}}</a></h2>
                         <div class="post-meta">
                             <span class="d-block"><a href="#">{{$bl->NoiDung}}</a></span>
                             <span class="date-read">{{$bl->updated_at}}<span class="mx-1">&bullet;</span>{{$bl->user->name}}</span>

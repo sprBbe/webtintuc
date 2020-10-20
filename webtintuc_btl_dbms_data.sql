@@ -81,16 +81,16 @@ INSERT INTO `LoaiTin` (`id`, `idTheLoai`, `Ten`, `TenKhongDau`, `created_at`, `u
 -- Dumping data for table `migrations`
 --
 
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_10_16_141425_create_the_loais_table', 1),
-(5, '2020_10_16_141833_create_loai_tins_table', 1),
-(6, '2020_10_16_141858_create_tin_tucs_table', 1),
-(7, '2020_10_16_142059_create_slides_table', 1),
-(8, '2020_10_16_142149_create_comments_table', 1),
-(9, '2020_10_17_064333_update__users_table', 1);
+-- INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+-- (1, '2014_10_12_000000_create_users_table', 1),
+-- (2, '2014_10_12_100000_create_password_resets_table', 1),
+-- (3, '2019_08_19_000000_create_failed_jobs_table', 1),
+-- (4, '2020_10_16_141425_create_the_loais_table', 1),
+-- (5, '2020_10_16_141833_create_loai_tins_table', 1),
+-- (6, '2020_10_16_141858_create_tin_tucs_table', 1),
+-- (7, '2020_10_16_142059_create_slides_table', 1),
+-- (8, '2020_10_16_142149_create_comments_table', 1),
+-- (9, '2020_10_17_064333_update__users_table', 1);
 
 --
 -- Dumping data for table `Slide`
