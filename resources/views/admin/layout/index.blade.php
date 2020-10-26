@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>VINATIN</title>
-
+    <link rel="icon" href="/favicon.ico">
     {{-- <!-- Scripts -->
     <script src="js/app.js" defer></script>
 

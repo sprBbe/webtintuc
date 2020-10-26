@@ -9,6 +9,7 @@
 
     <title>VINATIN</title>
     <base href="{{asset('')}}">
+    <link rel="icon" href="/favicon.ico">
     <!-- Bootstrap Core CSS -->
     <link href="admin_asset/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
