@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\{LoaiTin, TheLoai};
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Cache;
+
 class LoaiTinController extends Controller
 {
     /**
@@ -14,7 +16,13 @@ class LoaiTinController extends Controller
      */
     public function index()
     {
-        $loaitin = LoaiTin::all();
+        if (Cache::has('loaitin_index')) {
+            $loaitin = Cache::get('loaitin_index');
+        }
+        else {
+            $loaitin = LoaiTin::all();
+            Cache::put('loaitin_index', $loaitin , 2000*60);
+        }
         return view('admin.loaitin.danhsach', ['loaitin' => $loaitin]);
     }
 
