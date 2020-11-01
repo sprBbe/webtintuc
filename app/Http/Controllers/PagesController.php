@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 use App\Models\{TheLoai, Slide,TinTuc,LoaiTin,Comment, User};
 use Illuminate\Support\Facades\Auth;
 
@@ -12,20 +13,78 @@ class PagesController extends Controller
     //
     function __construct()
     {
-        $theloai = TheLoai::all();
-        $slide = Slide::all();
+        if (Cache::has('theloai')) {
+            $theloai = Cache::get('theloai', 'default');
+        } else {
+            $theloai = TheLoai::all();
+            Cache::put('theloai', $theloai, 2000*60);
+        }
+        if (Cache::has('slide')) {
+            $slide = Cache::get('slide', 'default');
+        } else {
+            $slide = Slide::all();
+            Cache::put('slide', $slide, 2000*60);
+        }
         view()->share('theloai',$theloai);
         view()->share('slide',$slide);
     }
     function trangchu(){
-        $bon_tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
-        $loaitin1 = TinTuc::where('idLoaiTin', 1)->orderby('id','desc')->take(4)->get();
-        $loaitin2 = TinTuc::where('idLoaiTin', 2)->orderby('id','desc')->take(3)->get();
-        $loaitin3 = TinTuc::where('idLoaiTin', 3)->orderby('id','desc')->take(3)->get();
-        $loaitin4 = TinTuc::where('idLoaiTin', 4)->orderby('id','desc')->take(3)->get();
-        $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
-        $tinmoinhat = TinTuc::orderby('id','desc')->take(3)->get();
-        $binhluan = Comment::orderby('id','desc')->take(4)->get();
+        if (Cache::has('Pages_trangchu_bon_tinnoibat')) {
+            $bon_tinnoibat = Cache::get('Pages_trangchu_bon_tinnoibat', 'default');
+        } else {
+            $bon_tinnoibat = TinTuc::where('NoiBat', 1)->orderby('id','desc')->take(4)->get();
+            Cache::put('Pages_trangchu_bon_tinnoibat', $bon_tinnoibat, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_loaitin1')) {
+            $loaitin1 = Cache::get('Pages_trangchu_loaitin1', 'default');
+        } else {
+            $loaitin1 = TinTuc::where('idLoaiTin', 1)->orderby('id','desc')->take(4)->get();
+            Cache::put('Pages_trangchu_loaitin1', $loaitin1, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_loaitin2')) {
+            $loaitin2 = Cache::get('Pages_trangchu_loaitin2', 'default');
+        } else {
+            $loaitin2 = TinTuc::where('idLoaiTin', 2)->orderby('id','desc')->take(3)->get();
+            Cache::put('Pages_trangchu_loaitin2', $loaitin2, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_loaitin3')) {
+            $loaitin3 = Cache::get('Pages_trangchu_loaitin3', 'default');
+        } else {
+            $loaitin3 = TinTuc::where('idLoaiTin', 3)->orderby('id','desc')->take(3)->get();
+            Cache::put('Pages_trangchu_loaitin3', $loaitin3, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_loaitin4')) {
+            $loaitin4 = Cache::get('Pages_trangchu_loaitin4', 'default');
+        } else {
+            $loaitin4 = TinTuc::where('idLoaiTin', 4)->orderby('id','desc')->take(3)->get();
+            Cache::put('Pages_trangchu_loaitin4', $loaitin4, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_trending')) {
+            $trending = Cache::get('Pages_trangchu_trending', 'default');
+        } else {
+            $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
+            Cache::put('Pages_trangchu_trending', $trending, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_tinmoinhat')) {
+            $tinmoinhat = Cache::get('Pages_trangchu_tinmoinhat', 'default');
+        } else {
+            $tinmoinhat = TinTuc::orderby('id','desc')->take(3)->get();
+            Cache::put('Pages_trangchu_tinmoinhat', $tinmoinhat, 2000*60);
+        }
+
+        if (Cache::has('Pages_trangchu_binhluan')) {
+            $binhluan = Cache::get('Pages_trangchu_binhluan', 'default');
+        } else {
+            $binhluan = Comment::orderby('id','desc')->take(4)->get();
+            Cache::put('Pages_trangchu_binhluan', $binhluan, 2000*60);
+        }
+
         return view('pages.trangchu',['bon_tinnoibat'=>$bon_tinnoibat, 'loaitin1'=>$loaitin1,
         'loaitin2'=>$loaitin2,'loaitin3'=>$loaitin3,'loaitin4'=>$loaitin4,'tinmoinhat'=>$tinmoinhat,
         'trending'=>$trending,'binhluan'=>$binhluan]
