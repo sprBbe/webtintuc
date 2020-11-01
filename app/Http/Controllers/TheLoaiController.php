@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TheLoai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class TheLoaiController extends Controller
 {
@@ -14,7 +15,14 @@ class TheLoaiController extends Controller
      */
     public function index()
     {
-        $theloai = TheLoai::all();
+        if (Cache::has('theloai_index')) {
+            $theloai = Cache::get('theloai_index');
+        }
+        else {
+            $theloai = TheLoai::all();
+            Cache::put('theloai_index', $theloai , 2000*60);
+        }
+        //$theloai = TheLoai::all();
         return view('admin.theloai.danhsach', ['theloai' => $theloai]);
     }
 

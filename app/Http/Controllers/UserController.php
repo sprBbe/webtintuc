@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -15,8 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        $user = User::all();
+        if (Cache::has('user_index')) {
+            $user = Cache::get('user_index');
+        }
+        else {
+            $user = User::all();
+            Cache::put('user_index', $user , 2000*60);
+        }
         return view('admin.user.danhsach', ['user' => $user]);
     }
 

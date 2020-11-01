@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Slide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class SlideController extends Controller
 {
@@ -16,7 +17,14 @@ class SlideController extends Controller
     public function index()
     {
         //
-        $slide = Slide::all();
+        if (Cache::has('slide_index')) {
+            $slide = Cache::get('slide_index');
+        }
+        else {
+            $slide = Slide::all();
+            Cache::put('slide_index', $slide , 2000*60);
+        }
+        
         return view('admin.slide.danhsach', ['slide' => $slide]);
     }
 

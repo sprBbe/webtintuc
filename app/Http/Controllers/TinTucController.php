@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\{TinTuc,LoaiTin,TheLoai};
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Cache;
 
 class TinTucController extends Controller
 {
@@ -15,7 +16,13 @@ class TinTucController extends Controller
      */
     public function index()
     {
-        $tintuc = TinTuc::orderBy('id','desc')->get();
+        if (Cache::has('tintuc_index')) {
+            $tintuc = Cache::get('tintuc_index');
+        }
+        else {
+            $tintuc = TinTuc::orderBy('id','desc')->get();
+            Cache::put('tintuc_index', $tintuc , 2000*60);
+        }
         return view('admin.tintuc.danhsach', ['tintuc' => $tintuc]);
     }
 
