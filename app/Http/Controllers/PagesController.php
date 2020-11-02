@@ -90,11 +90,11 @@ class PagesController extends Controller
     }
 
     function tintuc($id) {
-        if (Cache::has('Pages_tintuc_tintuc')) {
-            $tintuc = Cache::get('Pages_tintuc_tintuc', 'default');
+        if (Cache::has('Pages_tintuc_tintuc_'.$id)) {
+            $tintuc = Cache::get('Pages_tintuc_tintuc_'.$id , 'default');
         } else {
             $tintuc = TinTuc::find($id);
-            Cache::put('Pages_tintuc_tintuc', $tintuc, $this->minutes);
+            Cache::put('Pages_tintuc_tintuc_'.$id, $tintuc, $this->minutes);
         }
 
         if (Cache::has('Pages_tintuc_tinlienquan')) {
@@ -108,11 +108,11 @@ class PagesController extends Controller
     }
 
     function loaitin($id){
-        if (Cache::has('Pages_loaitin_loaitin')) {
-            $loaitin = Cache::get('Pages_loaitin_loaitin', 'default');
+        if (Cache::has('Pages_loaitin_loaitin_'.$id)) {
+            $loaitin = Cache::get('Pages_loaitin_loaitin_'.$id, 'default');
         } else {
             $loaitin = LoaiTin::find($id);
-            Cache::put('Pages_loaitin_loaitin', $loaitin, $this->minutes);
+            Cache::put('Pages_loaitin_loaitin_'.$id, $loaitin, $this->minutes);
         }
 
         if (Cache::has('Pages_loaitin_tintuc')) {
