@@ -14,6 +14,7 @@ class SlideController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $minutes = 2000*60;
     public function index()
     {
         //
@@ -22,9 +23,9 @@ class SlideController extends Controller
         }
         else {
             $slide = Slide::all();
-            Cache::put('slide_index', $slide , 2000*60);
+            Cache::put('slide_index', $slide , $this->minutes);
         }
-        
+
         return view('admin.slide.danhsach', ['slide' => $slide]);
     }
 

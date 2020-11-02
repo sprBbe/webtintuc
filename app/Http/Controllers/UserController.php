@@ -14,6 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $minutes = 2000*60;
     public function index()
     {
         if (Cache::has('user_index')) {
@@ -21,7 +22,7 @@ class UserController extends Controller
         }
         else {
             $user = User::all();
-            Cache::put('user_index', $user , 2000*60);
+            Cache::put('user_index', $user , $this->minutes);
         }
         return view('admin.user.danhsach', ['user' => $user]);
     }

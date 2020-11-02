@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Cache;
 
 class LoaiTinController extends Controller
 {
+    public $minutes = 2000*60;
     /**
      * Display a listing of the resource.
      *
@@ -21,7 +22,7 @@ class LoaiTinController extends Controller
         }
         else {
             $loaitin = LoaiTin::all();
-            Cache::put('loaitin_index', $loaitin , 2000*60);
+            Cache::put('loaitin_index', $loaitin , $this->minutes);
         }
         return view('admin.loaitin.danhsach', ['loaitin' => $loaitin]);
     }
