@@ -1,5 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);
-@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
@@ -3574,6 +3573,7 @@ input[type=button].btn-block {
 
 .dropdown-item {
   display: block;
+  width: 100%;
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
@@ -10902,3 +10902,4 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+
