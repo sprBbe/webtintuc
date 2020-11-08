@@ -75,6 +75,7 @@ class UserController extends Controller
         $user->password = bcrypt($request->Password);
         $user->quyen = $request->Quyen;
         $user->save();
+        Cache::forget('user_index');
         return redirect('admin/user/create')->with('thongbao', 'Thêm thành công!');
     }
 
@@ -146,6 +147,7 @@ class UserController extends Controller
             $user->password = bcrypt($request->Password);
         }
         $user->save();
+        Cache::forget('user_index');
         return redirect('admin/user/'.$id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
 

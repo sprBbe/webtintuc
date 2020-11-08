@@ -59,7 +59,7 @@ class TheLoaiController extends Controller
         $theloai = new TheLoai;
         $theloai->Ten = $request->Ten;
         $theloai->TenKhongDau = changeTitle($request->Ten);
-        $theloai->save();
+        $theloai->save();Cache::forget('theloai_index');
         return redirect('admin/theloai/create')->with('thongbao', 'Thêm thành công!');
     }
 
@@ -110,7 +110,7 @@ class TheLoaiController extends Controller
         );
         $theloai->Ten = $request->Ten;
         $theloai->TenKhongDau = changeTitle($request->Ten);
-        $theloai->save();
+        $theloai->save();Cache::forget('theloai_index');
         return redirect('admin/theloai/' . $id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
 

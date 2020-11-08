@@ -82,7 +82,7 @@ class SlideController extends Controller
         }else{
             $slide->Hinh="";
         }
-        $slide->save();
+        $slide->save();Cache::forget('slide_index');
         return redirect('admin/slide/create')->with('thongbao', 'Thêm thành công!');
     }
 
@@ -153,7 +153,7 @@ class SlideController extends Controller
             unlink("upload/slide/".$slide->Hinh);
             $slide->Hinh = $Hinh;
         }
-        $slide->save();
+        $slide->save();Cache::forget('slide_index');
         return redirect('admin/slide/' . $id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
 

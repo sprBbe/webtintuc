@@ -63,7 +63,7 @@ class LoaiTinController extends Controller
         $loaitin->Ten = $request->Ten;
         $loaitin->TenKhongDau = changeTitle($request->Ten);
         $loaitin->idTheLoai = $request->TheLoai;
-        $loaitin->save();
+        $loaitin->save();Cache::forget('loaitin_index');
         return redirect('admin/loaitin/create')->with('thongbao', 'Thêm thành công!');
     }
 
@@ -118,7 +118,7 @@ class LoaiTinController extends Controller
         $loaitin->Ten = $request->Ten;
         $loaitin->TenKhongDau = changeTitle($request->Ten);
         $loaitin->idTheLoai = $request->TheLoai;
-        $loaitin->save();
+        $loaitin->save();Cache::forget('loaitin_index');Cache::forget('ajax_loaitin'.$loaitin->idTheLoai );
         return redirect('admin/loaitin/' . $id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
 

@@ -12,7 +12,7 @@ class AjaxController extends Controller
     public function getLoaiTin($idTheLoai)
     {
         if (Cache::has('ajax_loaitin'.$idTheLoai)) {
-            $loaitin = Cache::get('ajax_loaitin');
+            $loaitin = Cache::get('ajax_loaitin'.$idTheLoai);
         }
         else {
             $loaitin = LoaiTin::where('idTheLoai',$idTheLoai)->get();

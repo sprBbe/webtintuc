@@ -86,7 +86,7 @@ class TinTucController extends Controller
         }else{
             $tintuc->Hinh=""; 
         }
-        $tintuc->save();
+        $tintuc->save();Cache::forget('tintuc_index');
         return redirect('admin/tintuc/create')->with('thongbao', 'Thêm thành công!');
     }
 
@@ -161,7 +161,7 @@ class TinTucController extends Controller
             unlink("upload/tintuc/".$tintuc->Hinh);
             $tintuc->Hinh = $Hinh; 
         }
-        $tintuc->save();
+        $tintuc->save();Cache::forget('tintuc_index');
         return redirect('admin/tintuc/'.$id.'/edit')->with('thongbao', 'Sửa thành công!');
     }
 
