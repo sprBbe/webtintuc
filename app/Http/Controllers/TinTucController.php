@@ -174,8 +174,13 @@ class TinTucController extends Controller
      */
     public function destroy($id)
     {
-        $tintuc = TinTuc::find($id);
-        $tintuc->delete();
-        return redirect('admin/tintuc')->with('thongbao', 'Xoá thành công!');
+        try{
+            $tintuc = TinTuc::find($id);
+            $tintuc->delete();
+            return redirect('admin/tintuc')->with('thongbao', 'Xoá thành công!');
+        } catch (\Illuminate\Database\QueryException $e) {
+            //var_dump($e->errorInfo);
+            return redirect('admin/tintuc')->with('Exception', 'Xóa không thành công! Vi phạm ràng buộc toàn vẹn khóa ngoại');
+        }
     }
 }

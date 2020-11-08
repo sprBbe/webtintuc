@@ -122,9 +122,14 @@ class TheLoaiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        $theloai = TheLoai::find($id);
-        $theloai->delete();
-        return redirect('admin/theloai')->with('thongbao', 'Xoá thành công!');
+    {   
+        try {
+            $theloai = TheLoai::find($id);
+            $theloai->delete();
+            return redirect('admin/theloai')->with('thongbao', 'Xoá thành công!');
+        } catch (\Illuminate\Database\QueryException $e) {
+            //var_dump($e->errorInfo);
+            return redirect('admin/theloai')->with('Exception', 'Xóa không thành công! Vi phạm ràng buộc toàn vẹn khóa ngoại');
+        }
     }
 }

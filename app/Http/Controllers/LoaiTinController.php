@@ -131,8 +131,13 @@ class LoaiTinController extends Controller
      */
     public function destroy($id)
     {
-        $loaitin = LoaiTin::find($id);
-        $loaitin->delete();
-        return redirect('admin/loaitin')->with('thongbao', 'Xoá thành công!');
+        try {
+            $loaitin = LoaiTin::find($id);
+            $loaitin->delete();
+            return redirect('admin/loaitin')->with('thongbao', 'Xoá thành công!');
+        } catch (\Illuminate\Database\QueryException $e) {
+            //var_dump($e->errorInfo);
+            return redirect('admin/loaitin')->with('Exception', 'Xóa không thành công! Vi phạm ràng buộc toàn vẹn khóa ngoại');
+        }
     }
 }

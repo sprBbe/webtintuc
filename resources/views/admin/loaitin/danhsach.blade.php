@@ -16,6 +16,11 @@
                     {{session('thongbao')}} 
                     </div>
                 @endif
+                @if (session('Exception'))
+                     <div class="alert alert-danger">
+                        {{session('Exception')}}
+                     </div>
+                @endif
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>

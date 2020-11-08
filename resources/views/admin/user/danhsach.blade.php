@@ -19,6 +19,11 @@
                         @endforeach       
                         </div>
                 @endif
+                @if (session('Exception'))
+                     <div class="alert alert-danger">
+                        {{session('Exception')}}
+                     </div>
+                @endif
                 @if (session('thongbao'))
                         <div class="alert alert-success">
                         {{session('thongbao')}} 

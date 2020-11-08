@@ -160,10 +160,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $user = User::find($id);
-        $user->delete();
-        return redirect('admin/user')->with('thongbao', 'Xoá người dùng thành công!');
+        try {
+            $user = User::find($id);
+            $user->delete();
+            return redirect('admin/user')->with('thongbao', 'Xoá người dùng thành công!');
+        } catch (\Illuminate\Database\QueryException $e) {
+            //var_dump($e->errorInfo);
+            return redirect('admin/user')->with('Exception', 'Xóa không thành công! Vi phạm ràng buộc toàn vẹn khóa ngoại');
+        }
     }
 
     public function getdangnhapAdmin()
