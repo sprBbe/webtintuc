@@ -14,6 +14,7 @@ class TinTucController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $minutes = 2000*60;
     public function index()
     {
         if (Cache::has('tintuc_index')) {
@@ -21,7 +22,7 @@ class TinTucController extends Controller
         }
         else {
             $tintuc = TinTuc::orderBy('id','desc')->get();
-            Cache::put('tintuc_index', $tintuc , 2000*60);
+            Cache::put('tintuc_index', $tintuc , $this->minutes);
         }
         return view('admin.tintuc.danhsach', ['tintuc' => $tintuc]);
     }
@@ -82,9 +83,9 @@ class TinTucController extends Controller
                 $Hinh = Str::random(4)."_".$name;
             }
             $file->move("upload/tintuc/",$Hinh);
-            $tintuc->Hinh = $Hinh; 
+            $tintuc->Hinh = $Hinh;
         }else{
-            $tintuc->Hinh=""; 
+            $tintuc->Hinh="";
         }
         $tintuc->save();Cache::forget('tintuc_index');
         return redirect('admin/tintuc/create')->with('thongbao', 'Thêm thành công!');
@@ -159,7 +160,7 @@ class TinTucController extends Controller
             }
             $file->move("upload/tintuc/",$Hinh);
             unlink("upload/tintuc/".$tintuc->Hinh);
-            $tintuc->Hinh = $Hinh; 
+            $tintuc->Hinh = $Hinh;
         }
         $tintuc->save();Cache::forget('tintuc_index');
         return redirect('admin/tintuc/'.$id.'/edit')->with('thongbao', 'Sửa thành công!');

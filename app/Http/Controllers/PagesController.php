@@ -10,125 +10,123 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-    //
+    public $minutes = 2000*60;
     function __construct()
     {
         if (Cache::has('theloai')) {
             $theloai = Cache::get('theloai', 'default');
         } else {
             $theloai = TheLoai::all();
-            Cache::put('theloai', $theloai, 2000*60);
-        }
-        if (Cache::has('slide')) {
-            $slide = Cache::get('slide', 'default');
-        } else {
-            $slide = Slide::all();
-            Cache::put('slide', $slide, 2000*60);
+            Cache::put('theloai', $theloai, $this->minutes);
         }
         view()->share('theloai',$theloai);
-        view()->share('slide',$slide);
     }
     function trangchu(){
         if (Cache::has('Pages_trangchu_bon_tinnoibat')) {
             $bon_tinnoibat = Cache::get('Pages_trangchu_bon_tinnoibat', 'default');
         } else {
             $bon_tinnoibat = TinTuc::where('NoiBat', 1)->orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_trangchu_bon_tinnoibat', $bon_tinnoibat, 2000*60);
+            Cache::put('Pages_trangchu_bon_tinnoibat', $bon_tinnoibat, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_loaitin1')) {
             $loaitin1 = Cache::get('Pages_trangchu_loaitin1', 'default');
         } else {
             $loaitin1 = TinTuc::where('idLoaiTin', 1)->orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_trangchu_loaitin1', $loaitin1, 2000*60);
+            Cache::put('Pages_trangchu_loaitin1', $loaitin1, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_loaitin2')) {
             $loaitin2 = Cache::get('Pages_trangchu_loaitin2', 'default');
         } else {
             $loaitin2 = TinTuc::where('idLoaiTin', 2)->orderby('id','desc')->take(3)->get();
-            Cache::put('Pages_trangchu_loaitin2', $loaitin2, 2000*60);
+            Cache::put('Pages_trangchu_loaitin2', $loaitin2, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_loaitin3')) {
             $loaitin3 = Cache::get('Pages_trangchu_loaitin3', 'default');
         } else {
             $loaitin3 = TinTuc::where('idLoaiTin', 3)->orderby('id','desc')->take(3)->get();
-            Cache::put('Pages_trangchu_loaitin3', $loaitin3, 2000*60);
+            Cache::put('Pages_trangchu_loaitin3', $loaitin3, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_loaitin4')) {
             $loaitin4 = Cache::get('Pages_trangchu_loaitin4', 'default');
         } else {
             $loaitin4 = TinTuc::where('idLoaiTin', 4)->orderby('id','desc')->take(3)->get();
-            Cache::put('Pages_trangchu_loaitin4', $loaitin4, 2000*60);
+            Cache::put('Pages_trangchu_loaitin4', $loaitin4, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_trending')) {
             $trending = Cache::get('Pages_trangchu_trending', 'default');
         } else {
             $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(4)->get();
-            Cache::put('Pages_trangchu_trending', $trending, 2000*60);
+            Cache::put('Pages_trangchu_trending', $trending, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_tinmoinhat')) {
             $tinmoinhat = Cache::get('Pages_trangchu_tinmoinhat', 'default');
         } else {
             $tinmoinhat = TinTuc::orderby('id','desc')->take(3)->get();
-            Cache::put('Pages_trangchu_tinmoinhat', $tinmoinhat, 2000*60);
+            Cache::put('Pages_trangchu_tinmoinhat', $tinmoinhat, $this->minutes);
         }
 
         if (Cache::has('Pages_trangchu_binhluan')) {
             $binhluan = Cache::get('Pages_trangchu_binhluan', 'default');
         } else {
             $binhluan = Comment::orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_trangchu_binhluan', $binhluan, 2000*60);
+            Cache::put('Pages_trangchu_binhluan', $binhluan, $this->minutes);
         }
-
+        if (Cache::has('slide')) {
+            $slide = Cache::get('slide', 'default');
+        } else {
+            $slide = Slide::all();
+            Cache::put('slide', $slide, $this->minutes);
+        }
         return view('pages.trangchu',['bon_tinnoibat'=>$bon_tinnoibat, 'loaitin1'=>$loaitin1,
         'loaitin2'=>$loaitin2,'loaitin3'=>$loaitin3,'loaitin4'=>$loaitin4,'tinmoinhat'=>$tinmoinhat,
-        'trending'=>$trending,'binhluan'=>$binhluan]
+        'trending'=>$trending,'binhluan'=>$binhluan,'slide'=>$slide]
         );
     }
 
     function tintuc($id) {
-        if (Cache::has('Pages_tintuc_tintuc')) {
-            $tintuc = Cache::get('Pages_tintuc_tintuc', 'default');
+        if (Cache::has('Pages_tintuc_tintuc_'.$id)) {
+            $tintuc = Cache::get('Pages_tintuc_tintuc_'.$id , 'default');
         } else {
             $tintuc = TinTuc::find($id);
-            Cache::put('Pages_tintuc_tintuc', $tintuc, 2000*60);
+            Cache::put('Pages_tintuc_tintuc_'.$id, $tintuc, $this->minutes);
         }
 
         if (Cache::has('Pages_tintuc_tinlienquan')) {
             $tinlienquan = Cache::get('Pages_tintuc_tinlienquan', 'default');
         } else {
             $tinlienquan = TinTuc::where('idLoaiTin',$tintuc->idLoaiTin)->orderby('id', 'desc')->take(5)->get();
-            Cache::put('Pages_tintuc_tinlienquan', $tinlienquan, 2000*60);
+            Cache::put('Pages_tintuc_tinlienquan', $tinlienquan, $this->minutes);
         }
         DB::table('TinTuc')->where('id', $id)->update(['SoLuotXem' => $tintuc->SoLuotXem+1]);
         return view('pages.tintuc',['tintuc'=>$tintuc,'tinlienquan'=>$tinlienquan]);
     }
 
     function loaitin($id){
-        if (Cache::has('Pages_loaitin_loaitin')) {
-            $loaitin = Cache::get('Pages_loaitin_loaitin', 'default');
+        if (Cache::has('Pages_loaitin_loaitin_'.$id)) {
+            $loaitin = Cache::get('Pages_loaitin_loaitin_'.$id, 'default');
         } else {
             $loaitin = LoaiTin::find($id);
-            Cache::put('Pages_loaitin_loaitin', $loaitin, 2000*60);
+            Cache::put('Pages_loaitin_loaitin_'.$id, $loaitin, $this->minutes);
         }
 
         if (Cache::has('Pages_loaitin_tintuc')) {
             $tintuc = Cache::get('Pages_loaitin_tintuc', 'default');
         } else {
             $tintuc = TinTuc::where('idLoaiTin',$id)->orderby('id','desc')->paginate(5);
-            Cache::put('Pages_loaitin_tintuc', $tintuc, 2000*60);
+            Cache::put('Pages_loaitin_tintuc', $tintuc, $this->minutes);
         }
 
         if (Cache::has('Pages_tinnoibat')) {
             $tinnoibat = Cache::get('Pages_tinnoibat', 'default');
         } else {
             $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_tinnoibat', $tinnoibat, 2000*60);
+            Cache::put('Pages_tinnoibat', $tinnoibat, $this->minutes);
         }
         return view('pages.loaitin',['loaitin'=>$loaitin,'tintuc'=>$tintuc,'tinnoibat'=>$tinnoibat]);
     }
@@ -138,7 +136,7 @@ class PagesController extends Controller
             $tinnoibat = Cache::get('Pages_tinnoibat_tinnoibat', 'default');
         } else {
             $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(10)->get();
-            Cache::put('Pages_tinnoibat_tinnoibat', $tinnoibat, 2000*60);
+            Cache::put('Pages_tinnoibat_tinnoibat', $tinnoibat, $this->minutes);
         }
 
         return view('pages.tinnoibat', ['tinnoibat'=>$tinnoibat]);
@@ -156,14 +154,14 @@ class PagesController extends Controller
             $trending = Cache::get('Pages_trending_trending', 'default');
         } else {
             $trending = TinTuc::where('id','>', DB::table('TinTuc')->max('id') - 50)->orderby('SoLuotXem','desc')->take(10)->get();
-            Cache::put('Pages_trending_trending', $trending, 2000*60);
+            Cache::put('Pages_trending_trending', $trending, $this->minutes);
         }
 
         if (Cache::has('Pages_tinnoibat')) {
             $tinnoibat = Cache::get('Pages_tinnoibat', 'default');
         } else {
             $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_tinnoibat', $tinnoibat, 2000*60);
+            Cache::put('Pages_tinnoibat', $tinnoibat, $this->minutes);
         }
 
 
@@ -174,14 +172,14 @@ class PagesController extends Controller
             $newest_cmt = Cache::get('Pages_trending_newest_cmt', 'default');
         } else {
             $newest_cmt = Comment::orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_trending_newest_cmt', $newest_cmt, 2000*60);
+            Cache::put('Pages_trending_newest_cmt', $newest_cmt, $this->minutes);
         }
 
         if (Cache::has('Pages_tinnoibat')) {
             $tinnoibat = Cache::get('Pages_tinnoibat', 'default');
         } else {
             $tinnoibat = TinTuc::where('NoiBat',1)->orderby('id','desc')->take(4)->get();
-            Cache::put('Pages_tinnoibat', $tinnoibat, 2000*60);
+            Cache::put('Pages_tinnoibat', $tinnoibat, $this->minutes);
         }
         return view('pages.newest_cmt',['newest_cmt'=>$newest_cmt,'tinnoibat'=>$tinnoibat]);
     }

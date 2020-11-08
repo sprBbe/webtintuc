@@ -13,6 +13,7 @@ class TheLoaiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $minutes = 2000*60;
     public function index()
     {
         if (Cache::has('theloai_index')) {
@@ -20,7 +21,7 @@ class TheLoaiController extends Controller
         }
         else {
             $theloai = TheLoai::all();
-            Cache::put('theloai_index', $theloai , 2000*60);
+            Cache::put('theloai_index', $theloai , $this->minutes);
         }
         //$theloai = TheLoai::all();
         return view('admin.theloai.danhsach', ['theloai' => $theloai]);
