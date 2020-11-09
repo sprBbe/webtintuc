@@ -25,7 +25,6 @@ class CreateTinTucsTable extends Migration
             $table->bigInteger('idLoaiTin')->unsigned();
             $table->foreign('idLoaiTin')->references('id')->on('LoaiTin');
             $table->timestamps();
-            $table->index('NoiBat');
         });
     }
 
