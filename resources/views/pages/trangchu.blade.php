@@ -31,6 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                @if (isset($loaitin1[0]))
                 <div class="row">
                     <div class="col-12">
                         <div class="section-title">
@@ -77,6 +78,23 @@
                         @endforeach
                     </div>
                 </div>
+                @else
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title">
+                                <h2>Loại tin này chưa có bài!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div>
+                    </div>
+                @endif
             </div>
             <div class="col-lg-4">
                 <div class="section-title">
@@ -114,27 +132,34 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
-                <div class="section-title">
-                    <h2>{{$loaitin2[0]->loaitin->Ten}}</h2>
-                </div>
-                @foreach($loaitin2 as $lt2)
-                <div class="post-entry-2 d-flex">
-                    <div class="thumbnail" style="background-image: url('upload/tintuc/{{$lt2->Hinh}}')"></div>
-                    <div class="contents">
-                        <h2><a href="tintuc/{{$lt2->id}}/{{$lt2->TieuDeKhongDau}}.html">{{$lt2->TieuDe}}</a></h2>
-                        <p class="mb-3">{{$lt2->TomTat}}</p>
-                        <div class="post-meta">
-                            <span class="d-block"><a href="#">@if ($lt2->NoiBat==0)
-                                {{'Tin không được đánh dấu nổi bật!'}}
-                            @else {{'Tin được đánh dấu nổi bật!'}}
-                            @endif</a></span>
-                            <span class="date-read">{{$lt2->updated_at}}<span class="mx-1">&bullet;</span>{{$lt2->SoLuotXem}} lượt xem</span>
+                @if (isset($loaitin2[0]))
+                    <div class="section-title">
+                        <h2>{{$loaitin2[0]->loaitin->Ten}}</h2>
+                    </div>
+                    @foreach($loaitin2 as $lt2)
+                    <div class="post-entry-2 d-flex">
+                        <div class="thumbnail" style="background-image: url('upload/tintuc/{{$lt2->Hinh}}')"></div>
+                        <div class="contents">
+                            <h2><a href="tintuc/{{$lt2->id}}/{{$lt2->TieuDeKhongDau}}.html">{{$lt2->TieuDe}}</a></h2>
+                            <p class="mb-3">{{$lt2->TomTat}}</p>
+                            <div class="post-meta">
+                                <span class="d-block"><a href="#">@if ($lt2->NoiBat==0)
+                                    {{'Tin không được đánh dấu nổi bật!'}}
+                                @else {{'Tin được đánh dấu nổi bật!'}}
+                                @endif</a></span>
+                                <span class="date-read">{{$lt2->updated_at}}<span class="mx-1">&bullet;</span>{{$lt2->SoLuotXem}} lượt xem</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach
+                @else
+                    <div class="section-title">
+                        <h2>Loại tin này chưa có bài!</h2>
+                    </div>
+                @endif
             </div>
             <div class="col-lg-6">
+                @if (isset($loaitin3[0]))
                 <div class="section-title">
                     <h2>{{$loaitin3[0]->loaitin->Ten}}</h2>
                 </div>
@@ -154,6 +179,11 @@
                     </div>
                 </div>
                 @endforeach
+                @else
+                    <div class="section-title">
+                        <h2>Loại tin này chưa có bài!</h2>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
@@ -175,11 +205,11 @@
                         <h2><a href="tintuc/{{$moinhat->id}}/{{$moinhat->TieuDeKhongDau}}.html">{{$moinhat->TieuDe}}</a></h2>
                         <p class="mb-3">{{$moinhat->TomTat}}</p>
                         <div class="post-meta">
-                            <span class="d-block"><a href="#">@if ($loaitin1_1->NoiBat==0)
+                            <span class="d-block"><a href="#">@if ($moinhat->NoiBat==0)
                                 {{'Tin không được đánh dấu nổi bật!'}}
                             @else {{'Tin được đánh dấu nổi bật!'}}
                             @endif</a></span>
-                            <span class="date-read">{{$loaitin1_3->updated_at}}<span class="mx-1">&bullet;</span>{{$loaitin1_3->SoLuotXem}} lượt xem</span>
+                            <span class="date-read">{{$moinhat->updated_at}}<span class="mx-1">&bullet;</span>{{$moinhat->SoLuotXem}} lượt xem</span>
                         </div>
                     </div>
                 </div>
