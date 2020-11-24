@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Cache;
 
 class AjaxController extends Controller
 {
-    public $minutes = 2000*60;
+    public $minutes = 2*60;
     public function getLoaiTin($idTheLoai)
     {
         if (Cache::has('ajax_loaitin'.$idTheLoai)) {

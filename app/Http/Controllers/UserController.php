@@ -14,7 +14,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public $minutes = 2000*60;
+    public $minutes = 2*60;
     public function index()
     {
         if (Cache::has('user_index')) {

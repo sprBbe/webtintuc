@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Cache;
 
 class LoaiTinController extends Controller
 {
-    public $minutes = 2000*60;
+    public $minutes = 2*60;
     /**
      * Display a listing of the resource.
      *

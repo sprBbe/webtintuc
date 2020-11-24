@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PagesController extends Controller
 {
-    public $minutes = 2000*60;
+    public $minutes = 2*60;
     function __construct()
     {
         if (Cache::has('theloai')) {
