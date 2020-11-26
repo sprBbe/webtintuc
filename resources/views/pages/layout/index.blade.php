@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HQJG1V91YH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-HQJG1V91YH');
+    </script>
     <base href="{{asset('')}}">
     <title>VINATIN</title>
     <link rel="icon" href="/favicon.ico">
@@ -41,7 +50,7 @@
 
 
     @yield('content')
-    
+
 
     @include('pages.layout.footer')
 
