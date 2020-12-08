@@ -16,9 +16,11 @@ class TinTucSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $tieude = $faker->realText(80, 2);
-        $tieudekhongdau = changeTitle($tieude);
-        $tintucs = [
+
+        for ($i = 0; $i<10; $i++){
+            $tieude = $faker->realText(80, 2);
+            $tieudekhongdau = changeTitle($tieude);
+        $tintucs[] =
             [
                 'TieuDe' => $tieude,
                 'TieuDeKhongDau' => $tieudekhongdau,
@@ -31,13 +33,12 @@ class TinTucSeeder extends Seeder
                 'NoiBat' => rand(0, 1),
                 'SoLuotXem' => rand(100, 1000),
                 'Hinh' => "bo-hinh-nen-chat-luong-cao-" . rand(1, 101) . ".jpg",
-            ],
-        ];
-        for ($i = 0; $i<10; $i++){
+            ];
+        }
             foreach ($tintucs as $tintuc) {
                 TinTuc::create($tintuc);
             }
-        }
+
 
     }
 }
