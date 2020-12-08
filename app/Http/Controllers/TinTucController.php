@@ -21,7 +21,7 @@ class TinTucController extends Controller
             $tintuc = Cache::get('tintuc_index');
         }
         else {
-            $tintuc = TinTuc::orderBy('id','desc')->get();
+            $tintuc = TinTuc::orderBy('id','desc')->take(200)->get();
             Cache::put('tintuc_index', $tintuc , $this->minutes);
         }
         return view('admin.tintuc.danhsach', ['tintuc' => $tintuc]);

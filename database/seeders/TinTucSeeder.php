@@ -17,7 +17,7 @@ class TinTucSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i<10; $i++){
+        for ($i = 0; $i<30000; $i++){
             $tieude = $faker->realText(80, 2);
             $tieudekhongdau = changeTitle($tieude);
         $tintucs[] =

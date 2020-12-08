@@ -16,6 +16,8 @@ class AddIndexToUsersTable extends Migration
         Schema::table('TinTuc', function (Blueprint $table) {
             $table->index('NoiBat');
             $table->index('TieuDe');
+//            $table->index('NoiDung');
+//            $table->index('TomTat');
             $table->index('created_at');
             $table->index('updated_at');
         });
